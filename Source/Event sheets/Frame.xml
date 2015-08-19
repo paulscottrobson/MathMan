@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Frame</name>
+    <events>
+        <comment>Length of each maze box segment</comment>
+        <variable comment="Frame size (long)" constant="1" name="MAZE_BOX_SIZE" sid="7845801931263286" static="0" type="number">64</variable>
+        <comment>How close it has to be to the centre to allow movement in that axis</comment>
+        <variable comment="How close it has to be to the middle to count for movement" constant="0" name="MAZE_CENTRE_ALLOWED" sid="6477134134064367" static="0" type="number">7</variable>
+        <comment>Size of the tunnel left&lt;-&gt;right in pixels</comment>
+        <variable comment="Size of tunnel" constant="1" name="TUNNEL_WIDTH" sid="541696148547471" static="0" type="number">192</variable>
+        <comment>Width of the frames</comment>
+        <variable comment="Frame size (short)" constant="1" name="MAZE_EDGE_WIDTH" sid="3489782081867744" static="0" type="number">6</variable>
+        <comment>Firstly, mirror the left half of the frame which is horizontally symmetrical</comment>
+        <event-block sid="150355136699659">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3918972181685811" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable comment="temporary for size of cloned object" constant="0" name="size" sid="858012323270944" static="0" type="number">0</variable>
+                <event-block sid="8827068590894752">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="4561548444669283" type="System">
+                            <param id="0" name="Object">FrameV</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="7729453072533978" type="FrameV">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth/2-MAZE_BOX_SIZE/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2141821436049361" type="System">
+                            <param id="0" name="Variable">size</param>
+                            <param id="1" name="Value">FrameV.Height</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9832112213946491" type="System">
+                            <param id="0" name="Object to create">FrameV</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">LayoutWidth-FrameV.X</param>
+                            <param id="3" name="Y">FrameV.Y</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="6712421011517937" type="FrameV">
+                            <param id="0" name="Width">MAZE_EDGE_WIDTH</param>
+                            <param id="1" name="Height">size</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9118293654883475">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="1604280302151369" type="System">
+                            <param id="0" name="Object">FrameH</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5528733692463477" type="System">
+                            <param id="0" name="Variable">size</param>
+                            <param id="1" name="Value">FrameH.Width</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="7765232857546283" type="System">
+                            <param id="0" name="Object to create">FrameH</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">LayoutWidth-FrameH.X-FrameH.Width</param>
+                            <param id="3" name="Y">FrameH.Y</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="8523702670807797" type="FrameH">
+                            <param id="0" name="Width">size</param>
+                            <param id="1" name="Height">MAZE_EDGE_WIDTH</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Tidy up positions and sizes</comment>
+        <event-block sid="5574519893889003">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5573256895874813" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Fix the width, height and position</comment>
+                <event-block sid="4905105319129082">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="2588963543008078" type="System">
+                            <param id="0" name="Object">FrameH</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="6629618547237709" type="FrameH">
+                            <param id="0" name="Height">MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="8703940200386184" type="FrameH">
+                            <param id="0" name="Width">floor((FrameH.Width+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE) * MAZE_BOX_SIZE+MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="6756930528091451" type="Frames">
+                            <param id="0" name="X">floor((Frames.X+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="180679803550652" type="Frames">
+                            <param id="0" name="Y">floor((Frames.Y+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE-MAZE_EDGE_WIDTH/2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Fix the width, height and position, and looks neater at the bottom</comment>
+                <event-block sid="4638242286709773">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="3774678866022457" type="System">
+                            <param id="0" name="Object">Door</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="5302699749840395" type="Door">
+                            <param id="0" name="Height">MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="2163547714280718" type="Door">
+                            <param id="0" name="Width">floor((Door.Width+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE) * MAZE_BOX_SIZE+MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="1235214928435527" type="Door">
+                            <param id="0" name="X">floor((Door.X+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="8357637797235792" type="Door">
+                            <param id="0" name="Y">floor((Door.Y+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE-MAZE_EDGE_WIDTH/2</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="6839698719476924" type="Door" />
+                    </actions>
+                </event-block>
+                <comment>Fix the width, height and position</comment>
+                <event-block sid="1904675641101792">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="5561216808755018" type="System">
+                            <param id="0" name="Object">FrameV</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="1259088989327272" type="FrameV">
+                            <param id="0" name="Width">MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="3203619815076559" type="FrameV">
+                            <param id="0" name="Height">floor((FrameV.Height+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE) * MAZE_BOX_SIZE+MAZE_EDGE_WIDTH</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="8743079859260712" type="Frames">
+                            <param id="0" name="X">floor((Frames.X+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE-MAZE_EDGE_WIDTH/2</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="3000604736198587" type="Frames">
+                            <param id="0" name="Y">floor((Frames.Y+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Reset all the dots and power pills</comment>
+        <event-block sid="7568976397396934">
+            <conditions>
+                <condition id="0" name="On function" sid="1062135622324306" type="Function">
+                    <param id="0" name="Name">&quot;resetDotsAndPills&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5806063919745809" type="PowerPill" />
+                <action id="-9" name="Destroy" sid="618897321707255" type="Dot" />
+            </actions>
+            <sub-events>
+                <comment>Create the four power pills</comment>
+                <event-block sid="3242628491625637">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2123624448737273" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2765889096708403" type="System">
+                            <param id="0" name="Object to create">PowerPill</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">MAZE_BOX_SIZE*5/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5609189100977633" type="System">
+                            <param id="0" name="Object to create">PowerPill</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">MAZE_BOX_SIZE*19/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8378507162600072" type="System">
+                            <param id="0" name="Object to create">PowerPill</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">LayoutWidth-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">MAZE_BOX_SIZE*5/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1183615086845597" type="System">
+                            <param id="0" name="Object to create">PowerPill</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">LayoutWidth-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">MAZE_BOX_SIZE*19/2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Create all the dots on a grid</comment>
+                <event-block sid="4323215844943285">
+                    <conditions>
+                        <condition id="-10" name="For" sid="7440393898004697" type="System">
+                            <param id="0" name="Name">&quot;x&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">LayoutWidth/MAZE_BOX_SIZE</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7201479364326882">
+                            <conditions>
+                                <condition id="-10" name="For" sid="7206362267687523" type="System">
+                                    <param id="0" name="Name">&quot;y&quot;</param>
+                                    <param id="1" name="Start index">2</param>
+                                    <param id="2" name="End index">LayoutHeight/MAZE_BOX_SIZE-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4399439939370041" type="System">
+                                    <param id="0" name="Object to create">Dot</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">(loopindex(&quot;x&quot;)-0.5)*MAZE_BOX_SIZE</param>
+                                    <param id="3" name="Y">(loopindex(&quot;y&quot;)-0.5)*MAZE_BOX_SIZE</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Destroy any dot that overlaps a power pill or a &quot;no dot&quot; cross</comment>
+                                <event-block any="1" sid="1116932800812168">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="8446627851038479" type="Dot">
+                                            <param id="0" name="Object">PowerPill</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="9158807780534896" type="Dot">
+                                            <param id="0" name="Object">NoDot</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="6949408513626736" type="Dot" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Put them on the bottom of the layer</comment>
+                <event-block sid="8033853394655343">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="5519125811081935" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Move to bottom" sid="1711067255907645" type="PowerPill" />
+                        <action id="-25" name="Move to bottom" sid="2562781108534079" type="Dot" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Reset All the Ghosts</comment>
+        <event-block sid="4328354081649981">
+            <conditions>
+                <condition id="0" name="On function" sid="2460664917448638" type="Function">
+                    <param id="0" name="Name">&quot;resetGhosts&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7144344682060293">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9260451680879507" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9312373981359442" type="Ghost" />
+                    </actions>
+                </event-block>
+                <event-block sid="5035552413881371">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2988683053428998" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="6476579926414006" type="System">
+                            <param id="0" name="Object to create">Ghost</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">choose(5,6)*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">7*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7472994670690527" type="Ghost">
+                            <param id="0" name="Instance variable">standardAnimation</param>
+                            <param id="1" name="Value">&quot;Red&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4497324882953658" type="Ghost">
+                            <param id="0" name="Instance variable">brains</param>
+                            <param id="1" name="Value">0.9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3970127796518819">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3702613147841112" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="47155741316132" type="System">
+                            <param id="0" name="Object to create">Ghost</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">choose(5,6)*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">7*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2479222053375083" type="Ghost">
+                            <param id="0" name="Instance variable">standardAnimation</param>
+                            <param id="1" name="Value">&quot;Pink&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4179392126757879" type="Ghost">
+                            <param id="0" name="Instance variable">brains</param>
+                            <param id="1" name="Value">0.7</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4286728035024569">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="1750542633787085" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7655270492950026" type="System">
+                            <param id="0" name="Object to create">Ghost</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">choose(5,6)*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">7*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6903930651192887" type="Ghost">
+                            <param id="0" name="Instance variable">standardAnimation</param>
+                            <param id="1" name="Value">&quot;Cyan&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3546217675748742" type="Ghost">
+                            <param id="0" name="Instance variable">brains</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7936669513417521">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3435402306226024" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1903369038386946" type="System">
+                            <param id="0" name="Object to create">Ghost</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">choose(5,6)*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                            <param id="3" name="Y">7*MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6898592040206579" type="Ghost">
+                            <param id="0" name="Instance variable">standardAnimation</param>
+                            <param id="1" name="Value">&quot;Orange&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9496917732493305" type="Ghost">
+                            <param id="0" name="Instance variable">brains</param>
+                            <param id="1" name="Value">0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Reset the Pacman</comment>
+        <event-block sid="4101759867533066">
+            <conditions>
+                <condition id="0" name="On function" sid="473390122981519" type="Function">
+                    <param id="0" name="Name">&quot;resetPacman&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1093392894006137" type="Pacman" />
+                <action id="-3" name="Create object" sid="2414518001457169" type="System">
+                    <param id="0" name="Object to create">Pacman</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">5*MAZE_BOX_SIZE</param>
+                    <param id="3" name="Y">9*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4536365443058004">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="1690431365335499" type="Pacman">
+                            <param id="0" name="Object">Dot</param>
+                            <param id="1" name="Offset X">16</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4161086107920806" type="Dot" />
+                    </actions>
+                </event-block>
+                <event-block sid="5699660676763039">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="2645706290776555" type="Pacman">
+                            <param id="0" name="Object">Dot</param>
+                            <param id="1" name="Offset X">-16</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9028875379200701" type="Dot" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
