@@ -621,7 +621,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="1376959033416141" type="System">
                             <param id="0" name="Variable">animation</param>
-                            <param id="1" name="Value">Ghost.dx &lt; 0 ? 4 : 0</param>
+                            <param id="1" name="Value">Ghost.dx &lt; 0 ? 2 : 0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -637,7 +637,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="6088518084592685" type="System">
                                     <param id="0" name="Variable">animation</param>
-                                    <param id="1" name="Value">Ghost.dy &lt; 0 ? 6 : 2</param>
+                                    <param id="1" name="Value">Ghost.dy &lt; 0 ? 3 : 1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -657,7 +657,7 @@
                                 </action>
                                 <action id="2" name="Stop" sid="9326526932611154" type="Ghost" />
                                 <action id="5" name="Set frame" sid="9362998154864694" type="Ghost">
-                                    <param id="0" name="Frame number">floor(time*16) % 4</param>
+                                    <param id="0" name="Frame number">floor(time*16) % 2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -672,7 +672,7 @@
                                     <param id="1" name="From">1</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="9485650629065825" type="Ghost">
-                                    <param id="0" name="Frame number">animation+floor(time*8) % 2</param>
+                                    <param id="0" name="Frame number">animation</param>
                                 </action>
                                 <action id="2" name="Stop" sid="4494761764124459" type="Ghost" />
                             </actions>

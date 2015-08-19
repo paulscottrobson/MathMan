@@ -13,8 +13,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="0">Game Screen</layout>
         <layout order="5">Title Screen</layout>
         <event-sheet order="1">Game Events</event-sheet>
-        <event-sheet active="1" order="2">Maze Construction</event-sheet>
-        <event-sheet order="3">MovingObjects</event-sheet>
+        <event-sheet order="2">Maze Construction</event-sheet>
+        <event-sheet active="1" order="3">MovingObjects</event-sheet>
         <event-sheet order="4">Controller</event-sheet>
         <event-sheet order="6">Title Event</event-sheet>
     </open-tabs>
