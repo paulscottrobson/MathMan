@@ -1250,8 +1250,8 @@
                 <instance type="Pacman" uid="104">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
+                        <initial-animation>A180</initial-animation>
+                        <initial-frame>1</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
@@ -1263,7 +1263,7 @@
                         <canMoveHorizontal>false</canMoveHorizontal>
                         <canMoveVertical>false</canMoveVertical>
                         <controlFunction>pacmanController</controlFunction>
-                        <animationFunction>dummyFunction</animationFunction>
+                        <animationFunction>pacmanAnimator</animationFunction>
                         <isControlled>true</isControlled>
                     </instance-variables>
                     <behavior-instances>
@@ -1308,7 +1308,7 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
-                        <angle>3.141592741</angle>
+                        <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>

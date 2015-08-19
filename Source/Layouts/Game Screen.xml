@@ -1869,7 +1869,7 @@
                         <canMoveHorizontal>false</canMoveHorizontal>
                         <canMoveVertical>false</canMoveVertical>
                         <controlFunction>pacmanController</controlFunction>
-                        <animationFunction>dummyFunction</animationFunction>
+                        <animationFunction>pacmanAnimator</animationFunction>
                         <isControlled>true</isControlled>
                     </instance-variables>
                     <behavior-instances>
