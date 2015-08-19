@@ -752,7 +752,7 @@
                             <actions>
                                 <action id="4" name="Set animation" sid="6292172691215222" type="Pacman">
                                     <param id="0" name="Animation">&quot;A&quot; &amp; (animation*90)</param>
-                                    <param id="1" name="From">1</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
                             </actions>
                         </event-block>

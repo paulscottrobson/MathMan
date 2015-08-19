@@ -400,7 +400,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="3" loop="1" name="A0" pingpong="1" repeatcount="1" repeatto="0" sid="2617513451431463" speed="9">
+                <animation framecount="6" loop="1" name="A0" pingpong="1" repeatcount="1" repeatto="0" sid="2617513451431463" speed="9">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_0_0.png">
                         <collision-poly>
                             <point x="0.0576923" y="0.0600962" />
@@ -425,8 +425,32 @@
                             <point x="0.0721154" y="0.942308" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_0_3.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_0_4.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_0_5.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="3" loop="1" name="A90" pingpong="0" repeatcount="1" repeatto="0" sid="8700319010585159" speed="9">
+                <animation framecount="6" loop="1" name="A90" pingpong="0" repeatcount="1" repeatto="0" sid="8700319010585159" speed="9">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_90_0.png">
                         <collision-poly>
                             <point x="0.0576923" y="0.0600962" />
@@ -451,8 +475,32 @@
                             <point x="0.0721154" y="0.942308" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_90_3.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_90_4.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_90_5.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="3" loop="1" name="A180" pingpong="0" repeatcount="1" repeatto="0" sid="6276763058986198" speed="9">
+                <animation framecount="6" loop="1" name="A180" pingpong="0" repeatcount="1" repeatto="0" sid="6276763058986198" speed="9">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_180_0.png">
                         <collision-poly>
                             <point x="0.0576923" y="0.0600962" />
@@ -477,8 +525,32 @@
                             <point x="0.0721154" y="0.942308" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_180_3.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_180_4.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_180_5.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="3" loop="1" name="A270" pingpong="0" repeatcount="1" repeatto="0" sid="4881087568061429" speed="9">
+                <animation framecount="6" loop="1" name="A270" pingpong="0" repeatcount="1" repeatto="0" sid="4881087568061429" speed="9">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_270_0.png">
                         <collision-poly>
                             <point x="0.0576923" y="0.0600962" />
@@ -496,6 +568,30 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_270_2.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_270_3.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_270_4.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0600962" />
+                            <point x="0.935096" y="0.0576923" />
+                            <point x="0.942308" y="0.942308" />
+                            <point x="0.0721154" y="0.942308" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\Construction 2\pacman_270_5.png">
                         <collision-poly>
                             <point x="0.0576923" y="0.0600962" />
                             <point x="0.935096" y="0.0576923" />
