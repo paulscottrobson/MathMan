@@ -165,11 +165,6 @@
         <object-folder name="Maze">
             <object-type name="Door" sid="8710944641465302">
                 <plugin id="TiledBg" />
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
                 <texture />
             </object-type>
             <object-type name="FrameH" sid="9857061663822626">

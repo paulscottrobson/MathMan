@@ -108,11 +108,11 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-6" name="Set height" sid="5302699749840395" type="Door">
+                        <action disabled="1" id="-6" name="Set height" sid="5302699749840395" type="Door">
                             <param id="0" name="Height">MAZE_EDGE_WIDTH</param>
                         </action>
                         <action id="-5" name="Set width" sid="2163547714280718" type="Door">
-                            <param id="0" name="Width">floor((Door.Width+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE) * MAZE_BOX_SIZE+MAZE_EDGE_WIDTH</param>
+                            <param id="0" name="Width">floor((Door.Width+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE) * MAZE_BOX_SIZE+MAZE_EDGE_WIDTH-4</param>
                         </action>
                         <action id="-1" name="Set X" sid="1235214928435527" type="Door">
                             <param id="0" name="X">floor((Door.X+MAZE_BOX_SIZE/2)/MAZE_BOX_SIZE)*MAZE_BOX_SIZE</param>

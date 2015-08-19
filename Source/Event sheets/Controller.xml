@@ -357,6 +357,8 @@
                 </action>
                 <action id="33" name="Stop all" sid="9615220841386273" type="Audio" />
                 <action id="-9" name="Destroy" sid="7288064321554948" type="Moveable" />
+                <action id="-9" name="Destroy" sid="2892573479429684" type="Door" />
+                <action id="-9" name="Destroy" sid="7849736812288291" type="Fruit" />
             </actions>
         </event-block>
         <comment>On timer flashing maze, flash it</comment>
