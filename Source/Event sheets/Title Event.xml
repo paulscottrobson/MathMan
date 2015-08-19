@@ -72,9 +72,10 @@
             </actions>
         </event-block>
         <comment>Any key starts the game</comment>
-        <event-block sid="2449472721766733">
+        <event-block any="1" sid="2449472721766733">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="750420115755026" type="Keyboard" />
+                <condition id="14" name="On tap" sid="1868883273477773" type="Touch" />
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="5989942912686079" type="System">

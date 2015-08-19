@@ -544,6 +544,22 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="StickKnob" sid="942713083693651">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1181146282636177" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StickBackground" sid="9888620531593921">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="618851108989931" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Collectable" plugin-id="Sprite" sid="3996633519157558">
@@ -592,6 +608,23 @@
                 </effect-type>
             </effects>
         </family>
+        <family name="JoystickController" plugin-id="Sprite" sid="7204314831740188">
+            <members>
+                <member>StickKnob</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="True if joystick responds to touch events" name="isEnabled" sid="5322848328328501" type="boolean" />
+                <instance-variable comment="Maximum radius permitted" name="maxRadius" sid="4554443400848167" type="number" />
+                <instance-variable name="minRadius" sid="4502573141801714" type="number" />
+                <instance-variable comment="start (i.e. middle position)" name="xStart" sid="8661578206140962" type="number" />
+                <instance-variable comment="start (i.e. middle position)" name="yStart" sid="9855513962571264" type="number" />
+                <instance-variable name="knobAngle" sid="5243121517702437" type="number" />
+                <instance-variable comment="kno" name="knobDistance" sid="8514673218470381" type="number" />
+                <instance-variable comment="Pixels/sec return velocity" name="returnVelocity" sid="4617465236096722" type="number" />
+                <instance-variable name="deltaX" sid="5279673631810502" type="number" />
+                <instance-variable name="deltaY" sid="2943171591049227" type="number" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
         <layout>Game Screen.xml</layout>
@@ -601,8 +634,9 @@
         <event-sheet>Game Events.xml</event-sheet>
         <event-sheet>Maze Construction.xml</event-sheet>
         <event-sheet>MovingObjects.xml</event-sheet>
-        <event-sheet>Controller.xml</event-sheet>
+        <event-sheet>Game Controller.xml</event-sheet>
         <event-sheet>Title Event.xml</event-sheet>
+        <event-sheet>Joystick Controller.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="66" />

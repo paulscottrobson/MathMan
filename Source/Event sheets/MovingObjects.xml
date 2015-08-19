@@ -349,10 +349,15 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="6593345837858378">
+                                <event-block any="1" sid="6593345837858378">
                                     <conditions>
                                         <condition id="2" name="Key is down" sid="4098614834276912" type="Keyboard">
                                             <param id="0" name="Key">38 (Up arrow)</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="5809519151323257" type="StickKnob">
+                                            <param id="0" name="Instance variable">deltaY</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">-0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -365,10 +370,15 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="6771319458022797">
+                                <event-block any="1" sid="6771319458022797">
                                     <conditions>
                                         <condition id="2" name="Key is down" sid="8920160363738879" type="Keyboard">
                                             <param id="0" name="Key">40 (Down arrow)</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6240610563909677" type="StickKnob">
+                                            <param id="0" name="Instance variable">deltaY</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -381,10 +391,15 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="6634142980977365">
+                                <event-block any="1" sid="6634142980977365">
                                     <conditions>
                                         <condition id="2" name="Key is down" sid="2118197064931649" type="Keyboard">
                                             <param id="0" name="Key">37 (Left arrow)</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="5248817429778755" type="StickKnob">
+                                            <param id="0" name="Instance variable">deltaX</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">-0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -397,10 +412,15 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="9597252042130187">
+                                <event-block any="1" sid="9597252042130187">
                                     <conditions>
                                         <condition id="2" name="Key is down" sid="8580189717201141" type="Keyboard">
                                             <param id="0" name="Key">39 (Right arrow)</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9767323196201892" type="StickKnob">
+                                            <param id="0" name="Instance variable">deltaX</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions>

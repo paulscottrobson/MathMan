@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Controller</name>
+    <name>Game Controller</name>
     <events>
         <comment>Debugging feature. Global is created on Title Screen, but if run from here create one to use.</comment>
         <event-block sid="1283037572570142">
@@ -46,6 +46,10 @@
                 <action id="-13" name="Set boolean" sid="5905071607312187" type="Controller">
                     <param id="0" name="Instance variable">isResetRequired</param>
                     <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4153461366046364" type="Controller">
+                    <param id="0" name="Instance variable">level</param>
+                    <param id="1" name="Value">2</param>
                 </action>
             </actions>
         </event-block>

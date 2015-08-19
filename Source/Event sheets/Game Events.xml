@@ -8,6 +8,8 @@
         <comment>General code for moving objects</comment>
         <include>MovingObjects</include>
         <comment>Code which controls the game</comment>
-        <include>Controller</include>
+        <include>Game Controller</include>
+        <comment>Joypad events</comment>
+        <include>Joystick Controller</include>
     </events>
 </c2eventsheet>
