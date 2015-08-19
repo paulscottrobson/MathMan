@@ -256,16 +256,16 @@
                                     <param id="0" name="Instance variable">isControlled</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="863643765922691" type="Pacman">
-                                    <param id="0" name="Animation">&quot;Death&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                                 <action id="33" name="Stop all" sid="2708989605940697" type="Audio" />
                                 <action id="0" name="Play" sid="2661080507002612" type="Audio">
                                     <param id="0" name="Audio file">Death</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;deathSound&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="8882764173873347" type="Pacman" />
+                                <action behavior="Rotate" id="0" name="Set speed" sid="8945935086296487" type="Pacman">
+                                    <param id="0" name="Speed">720</param>
                                 </action>
                             </actions>
                         </event-block>
