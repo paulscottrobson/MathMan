@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Frame</name>
+    <name>Maze Construction</name>
     <events>
         <comment>Length of each maze box segment</comment>
         <variable comment="Frame size (long)" constant="1" name="MAZE_BOX_SIZE" sid="7845801931263286" static="0" type="number">64</variable>

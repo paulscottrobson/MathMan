@@ -31,17 +31,17 @@
             <instances>
                 <instance type="HighScoreText" uid="73">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>000000</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -61,17 +61,17 @@
                 </instance>
                 <instance type="ScoreText" uid="76">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>000000</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -91,17 +91,17 @@
                 </instance>
                 <instance type="StaticText" uid="77">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>HIGH SCORE</text>
-                        <scale>0.33</scale>
+                        <text>High Score</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -130,17 +130,17 @@
                 </instance>
                 <instance type="StaticText" uid="78">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>1UP</text>
-                        <scale>0.33</scale>
+                        <text>1Up</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -421,17 +421,17 @@
                 </instance>
                 <instance type="StaticText" uid="83">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>- SHADOW </text>
-                        <scale>0.33</scale>
+                        <text>- Shadow</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -446,8 +446,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>192</x>
-                        <y>160</y>
+                        <x>209</x>
+                        <y>157</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -460,17 +460,17 @@
                 </instance>
                 <instance type="StaticText" uid="84">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>- SPEEDY </text>
-                        <scale>0.33</scale>
+                        <text>- Speedy</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -485,8 +485,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>192</x>
-                        <y>224</y>
+                        <x>209</x>
+                        <y>221</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -499,17 +499,17 @@
                 </instance>
                 <instance type="StaticText" uid="85">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>- BASHFUL</text>
-                        <scale>0.33</scale>
+                        <text>- Bashful</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -524,8 +524,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>192</x>
-                        <y>288</y>
+                        <x>209</x>
+                        <y>285</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -538,17 +538,17 @@
                 </instance>
                 <instance type="StaticText" uid="86">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>- POKEY  </text>
-                        <scale>0.33</scale>
+                        <text>- Pokey</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -563,8 +563,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>192</x>
-                        <y>352</y>
+                        <x>209</x>
+                        <y>349</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -577,17 +577,17 @@
                 </instance>
                 <instance type="StaticText" uid="87">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>&quot;BLINKY&quot;</text>
-                        <scale>0.33</scale>
+                        <text>&quot;Blinky&quot;</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -602,8 +602,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>384</x>
-                        <y>160</y>
+                        <x>407</x>
+                        <y>157</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -616,17 +616,17 @@
                 </instance>
                 <instance type="StaticText" uid="88">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>&quot;PINKY&quot; </text>
-                        <scale>0.33</scale>
+                        <text>&quot;Pinky&quot;</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -641,8 +641,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>384</x>
-                        <y>224</y>
+                        <x>407</x>
+                        <y>221</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -655,17 +655,17 @@
                 </instance>
                 <instance type="StaticText" uid="89">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>&quot;CLYDE&quot; </text>
-                        <scale>0.33</scale>
+                        <text>&quot;Clyde&quot;</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -680,8 +680,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>384</x>
-                        <y>352</y>
+                        <x>407</x>
+                        <y>349</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -694,17 +694,17 @@
                 </instance>
                 <instance type="StaticText" uid="90">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>&quot;INKY&quot;  </text>
-                        <scale>0.33</scale>
+                        <text>&quot;Inky&quot;</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -719,8 +719,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>384</x>
-                        <y>288</y>
+                        <x>407</x>
+                        <y>285</y>
                         <z>0</z>
                         <width>192</width>
                         <height>64</height>
@@ -733,17 +733,17 @@
                 </instance>
                 <instance type="StaticText" uid="91">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>CHARACTER / NICKNAME</text>
-                        <scale>0.33</scale>
+                        <text>Character / Nickname</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -783,11 +783,11 @@
                         <x>286</x>
                         <y>615</y>
                         <z>0</z>
-                        <width>10</width>
-                        <height>10</height>
+                        <width>18</width>
+                        <height>18</height>
                         <depth>0</depth>
-                        <hotspotX>0.600000024</hotspotX>
-                        <hotspotY>0.600000024</hotspotY>
+                        <hotspotX>0.604166687</hotspotX>
+                        <hotspotY>0.604166687</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -816,17 +816,17 @@
                 </instance>
                 <instance type="StaticText" uid="94">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>10</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -855,17 +855,17 @@
                 </instance>
                 <instance type="StaticText" uid="95">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>50</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -894,17 +894,17 @@
                 </instance>
                 <instance type="StaticText" uid="96">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>PTS</text>
-                        <scale>0.2</scale>
+                        <text>pts</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -919,8 +919,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>362</x>
-                        <y>632</y>
+                        <x>370</x>
+                        <y>629</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -933,17 +933,17 @@
                 </instance>
                 <instance type="StaticText" uid="97">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>PTS</text>
-                        <scale>0.2</scale>
+                        <text>pts</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -958,8 +958,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>362</x>
-                        <y>586</y>
+                        <x>370</x>
+                        <y>583</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -972,17 +972,17 @@
                 </instance>
                 <instance type="StaticText" uid="98">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>CREDIT     1</text>
-                        <scale>0.33</scale>
+                        <text>Credit    1</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -997,7 +997,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-7</x>
+                        <x>-17</x>
                         <y>784</y>
                         <z>0</z>
                         <width>281</width>
@@ -1299,17 +1299,17 @@
                 </instance>
                 <instance type="StaticText" uid="105">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>Written by Paul Robson 2015</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>

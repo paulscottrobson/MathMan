@@ -17,9 +17,9 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
@@ -36,7 +36,7 @@
         <height>832</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
-    <preview-effects>0</preview-effects>
+    <preview-effects>1</preview-effects>
     <first-layout>Title Screen</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
@@ -55,153 +55,6 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-folder name="Text">
-            <object-type name="ScoreText" sid="1528769017565201">
-                <plugin id="Spritefont2" />
-                <texture original-source="C:\MathMan\Graphics\font4864.png" />
-            </object-type>
-            <object-type name="HighScoreText" sid="8081219365266319">
-                <plugin id="Spritefont2" />
-                <texture original-source="C:\MathMan\Graphics\font4864.png" />
-            </object-type>
-            <object-type name="StaticText" sid="7910744815108654">
-                <plugin id="Spritefont2" />
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
-                <texture original-source="C:\MathMan\Graphics\font4864.png" />
-            </object-type>
-            <object-type name="MicroScore" sid="891627178321422">
-                <plugin id="Spritefont2" />
-                <behaviors>
-                    <behavior-type name="Fade" sid="2863284135053171">
-                        <behavior id="Fade" />
-                    </behavior-type>
-                </behaviors>
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
-                <texture original-source="C:\MathMan\Graphics\font4864.png" />
-            </object-type>
-        </object-folder>
-        <object-folder name="Miscellany">
-            <object-type name="Audio" sid="7143309549732974">
-                <plugin id="Audio" />
-            </object-type>
-            <object-type name="Touch" sid="2074299336863198">
-                <plugin id="Touch" />
-            </object-type>
-            <object-type name="Blanker" sid="1495575321766431">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment="Sequence for coming on" name="seq" sid="3776888522823565" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Timer" sid="2925437743897897">
-                        <behavior id="Timer" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4427245627146555" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type global="1" name="Controller" sid="9453097270027026">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment="True if game running" name="isGameRunning" sid="2741816986737774" type="boolean" />
-                    <instance-variable comment="Current score" name="score" sid="6895996441389435" type="number" />
-                    <instance-variable comment="Current Number of Lives" name="lives" sid="8720130912523041" type="number" />
-                    <instance-variable comment="Current level" name="level" sid="8577793678232501" type="number" />
-                    <instance-variable comment="Movement speed scalar" name="speedScalar" sid="9961204717816525" type="number" />
-                    <instance-variable comment="High Score so far" name="highScore" sid="7646628331735305" type="number" />
-                    <instance-variable comment="No of times left to flash maze" name="flashCount" sid="7315179508249742" type="number" />
-                    <instance-variable comment="Next score for eaten ghost" name="nextGhostEastScore" sid="2265949741798997" type="number" />
-                    <instance-variable comment="True if reset required" name="isResetRequired" sid="185608063632421" type="boolean" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Timer" sid="5863022658326676">
-                        <behavior id="Timer" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6697367393854527" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Function" sid="3769503965319527">
-                <plugin id="Function" />
-            </object-type>
-            <object-type name="Keyboard" sid="3215585817245307">
-                <plugin id="Keyboard" />
-            </object-type>
-            <object-type name="LivesMarker" sid="6242416164768405">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="7203706323416869" speed="9">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open1.png">
-                            <collision-poly>
-                                <point x="0.96875" y="0.957386" />
-                                <point x="0.028409" y="0.971591" />
-                                <point x="0.025568" y="0.0340909" />
-                                <point x="0.971591" y="0.03125" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="NoDot" sid="7870891762758979">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9160730458176808" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="LocalStorage" sid="9200758469627716">
-                <plugin id="LocalStorage" />
-            </object-type>
-        </object-folder>
-        <object-folder name="Maze">
-            <object-type name="Door" sid="8710944641465302">
-                <plugin id="TiledBg" />
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
-                <texture />
-            </object-type>
-            <object-type name="FrameH" sid="9857061663822626">
-                <plugin id="TiledBg" />
-                <texture />
-            </object-type>
-            <object-type name="FrameV" sid="9192242574948911">
-                <plugin id="TiledBg" />
-                <texture />
-            </object-type>
-            <object-type name="Den" sid="6802279614750771">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2387495486702955" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-        </object-folder>
         <object-type name="Ghost" sid="2536858482831011">
             <plugin id="Sprite" />
             <instance-variables>
@@ -533,14 +386,14 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4480442408543516" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\swirl_red.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\mm_brown.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\heart_purple.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\jelly_yellow.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\lollipop_orange.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\jellybig_green.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\bean_white.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\star_blue.png" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.541667" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -669,17 +522,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6417268736758626" speed="5">
-                    <frame duration="1" hotspotX="0.604167" hotspotY="0.604167" original-source="C:\MathMan\Graphics\Dot.png">
-                        <collision-poly>
-                            <point x="0.310345" y="0.45" />
-                            <point x="0.5" y="0.45" />
-                            <point x="0.586207" y="0.6" />
-                            <point x="0.551724" y="0.5" />
-                            <point x="0.5" y="0.9" />
-                            <point x="0.206897" y="0.7" />
-                            <point x="0.258621" y="0.5" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.6" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -687,21 +530,263 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7202741196616933" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\MathMan\Graphics\powerpill.png">
-                        <collision-poly>
-                            <point x="0.15" y="0.15" />
-                            <point x="0.5" y="0" />
-                            <point x="0.85" y="0.15" />
-                            <point x="1" y="0.5" />
-                            <point x="0.85" y="0.85" />
-                            <point x="0.5" y="1" />
-                            <point x="0.15" y="0.85" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="FrameH" sid="9857061663822626">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="FrameV" sid="9192242574948911">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Den" sid="6802279614750771">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2387495486702955" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="3769503965319527">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Keyboard" sid="3215585817245307">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="NoDot" sid="7870891762758979">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9160730458176808" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Door" sid="8710944641465302">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type global="1" name="Controller" sid="9453097270027026">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="True if game running" name="isGameRunning" sid="2741816986737774" type="boolean" />
+                <instance-variable comment="Current score" name="score" sid="6895996441389435" type="number" />
+                <instance-variable comment="Current Number of Lives" name="lives" sid="8720130912523041" type="number" />
+                <instance-variable comment="Current level" name="level" sid="8577793678232501" type="number" />
+                <instance-variable comment="Movement speed scalar" name="speedScalar" sid="9961204717816525" type="number" />
+                <instance-variable comment="High Score so far" name="highScore" sid="7646628331735305" type="number" />
+                <instance-variable comment="No of times left to flash maze" name="flashCount" sid="7315179508249742" type="number" />
+                <instance-variable comment="Next score for eaten ghost" name="nextGhostEastScore" sid="2265949741798997" type="number" />
+                <instance-variable comment="True if reset required" name="isResetRequired" sid="185608063632421" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="5863022658326676">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6697367393854527" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="7143309549732974">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="StaticText" sid="7910744815108654">
+            <plugin id="Spritefont2" />
+            <effects>
+                <effect-type name="SetColor">
+                    <effect id="setcolor" />
+                </effect-type>
+            </effects>
+            <texture original-source="C:\Construct2\Practice\Docs\Galaxians\tester.png" />
+        </object-type>
+        <object-type name="ScoreText" sid="1528769017565201">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Construct2\Practice\Docs\Galaxians\tester.png" />
+        </object-type>
+        <object-type name="HighScoreText" sid="8081219365266319">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Construct2\Practice\Docs\Galaxians\tester.png" />
+        </object-type>
+        <object-type name="PacmanLives" sid="6242416164768405">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="7203706323416869" speed="9">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open1.png">
+                        <collision-poly>
+                            <point x="0.96875" y="0.957386" />
+                            <point x="0.028409" y="0.971591" />
+                            <point x="0.025568" y="0.0340909" />
+                            <point x="0.971591" y="0.03125" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GhostToLeft" sid="9396570572431105">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="True if last move was not at a junction" name="lastWasNotJunction" sid="3002721712273475" type="boolean" />
+                <instance-variable comment="Chance (0-1) of making a smart decision" name="brains" sid="6903569912419823" type="number" />
+                <instance-variable comment="if 1 then chase player, if -1 run away" name="attractDirection" sid="4176372753690854" type="number" />
+                <instance-variable comment="The normal animation (e.g. not chasing)" name="standardAnimation" sid="9053694680079835" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Red" pingpong="0" repeatcount="1" repeatto="0" sid="5195268103932079" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0182292" y="0.0426136" />
+                            <point x="0.971354" y="0.0426136" />
+                            <point x="0.966146" y="0.951704" />
+                            <point x="0.0260417" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0182292" y="0.0426136" />
+                            <point x="0.971354" y="0.0426136" />
+                            <point x="0.966146" y="0.951704" />
+                            <point x="0.0260417" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GhostToRight" sid="1118664231591352">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="True if last move was not at a junction" name="lastWasNotJunction" sid="667454775921623" type="boolean" />
+                <instance-variable comment="Chance (0-1) of making a smart decision" name="brains" sid="3860072970973521" type="number" />
+                <instance-variable comment="if 1 then chase player, if -1 run away" name="attractDirection" sid="5554744330848214" type="number" />
+                <instance-variable comment="The normal animation (e.g. not chasing)" name="standardAnimation" sid="4484564077684161" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Chased" pingpong="0" repeatcount="1" repeatto="0" sid="6580204619052466" speed="8">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0182292" y="0.0426136" />
+                            <point x="0.971354" y="0.0426136" />
+                            <point x="0.966146" y="0.951704" />
+                            <point x="0.0260417" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0182292" y="0.0426136" />
+                            <point x="0.971354" y="0.0426136" />
+                            <point x="0.966146" y="0.951704" />
+                            <point x="0.0260417" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PacmanToLeft" sid="9836697136095575">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="396377724070802" speed="9">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_closed.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open1.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open2.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PacmanToRight" sid="3783872107266652">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="3546816183840358" speed="9">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_closed.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open1.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Construct2\Practice\Docs\Pacman\pacman_open2.png">
+                        <collision-poly>
+                            <point x="0.0284091" y="0.03125" />
+                            <point x="0.974432" y="0.0340909" />
+                            <point x="0.971591" y="0.971591" />
+                            <point x="0.03125" y="0.957386" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MicroScore" sid="891627178321422">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Fade" sid="2863284135053171">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="SetColor">
+                    <effect id="setcolor" />
+                </effect-type>
+            </effects>
+            <texture original-source="C:\Construct2\Practice\Docs\Galaxians\tester.png" />
+        </object-type>
+        <object-type name="Blanker" sid="1495575321766431">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Sequence for coming on" name="seq" sid="3776888522823565" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="2925437743897897">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4427245627146555" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LocalStorage" sid="9200758469627716">
+            <plugin id="LocalStorage" />
         </object-type>
     </object-folder>
     <families>
@@ -751,16 +836,31 @@
                 </effect-type>
             </effects>
         </family>
+        <family name="Intermission1" plugin-id="Sprite" sid="9301659301401454">
+            <members>
+                <member>GhostToLeft</member>
+                <member>GhostToRight</member>
+                <member>PacmanToLeft</member>
+                <member>PacmanToRight</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="7313041524256794">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder>
         <layout>Game Screen.xml</layout>
+        <layout>Intermission.xml</layout>
         <layout>Title Screen.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Game Events.xml</event-sheet>
-        <event-sheet>Maze Construction.xml</event-sheet>
+        <event-sheet>Frame.xml</event-sheet>
         <event-sheet>MovingObjects.xml</event-sheet>
         <event-sheet>Controller.xml</event-sheet>
+        <event-sheet>IntermissionEvents.xml</event-sheet>
         <event-sheet>Title Event.xml</event-sheet>
     </event-folder>
     <global-instances>
@@ -781,11 +881,6 @@
             </properties>
         </global-instance>
         <global-instance type="LocalStorage" uid="120" />
-        <global-instance type="Touch" uid="69">
-            <properties>
-                <use-mouse-input>Yes</use-mouse-input>
-            </properties>
-        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="Death.m4a" />

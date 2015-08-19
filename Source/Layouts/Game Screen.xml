@@ -44,9 +44,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -80,9 +80,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -116,9 +116,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -152,9 +152,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -188,9 +188,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -224,9 +224,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -260,9 +260,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -296,9 +296,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -332,9 +332,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -368,9 +368,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -404,9 +404,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -440,9 +440,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -476,9 +476,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -512,9 +512,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -548,9 +548,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -584,9 +584,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -620,9 +620,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -656,9 +656,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -692,9 +692,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -728,9 +728,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -764,9 +764,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -800,9 +800,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -836,9 +836,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -872,9 +872,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -908,9 +908,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -944,9 +944,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -980,9 +980,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1016,9 +1016,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1052,9 +1052,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1088,9 +1088,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1124,9 +1124,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1160,9 +1160,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1196,9 +1196,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1232,9 +1232,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1268,9 +1268,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1304,9 +1304,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1335,14 +1335,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>563</x>
-                        <y>153</y>
+                        <x>704</x>
+                        <y>128</y>
                         <z>0</z>
-                        <width>10</width>
-                        <height>10</height>
+                        <width>18</width>
+                        <height>18</height>
                         <depth>0</depth>
-                        <hotspotX>0.600000024</hotspotX>
-                        <hotspotY>0.600000024</hotspotY>
+                        <hotspotX>0.604166687</hotspotX>
+                        <hotspotY>0.604166687</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1366,10 +1366,10 @@
                         <x>763</x>
                         <y>344</y>
                         <z>0</z>
-                        <width>52</width>
-                        <height>52</height>
+                        <width>45.714286804</width>
+                        <height>45.714286804</height>
                         <depth>0</depth>
-                        <hotspotX>0.541666687</hotspotX>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -1390,9 +1390,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1426,9 +1426,9 @@
                     <effect-instances>
                         <effect-instance type="SetColor">
                             <parameters>
-                                <blue>1</blue>
-                                <green>0</green>
-                                <red>0</red>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
@@ -1760,22 +1760,31 @@
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                     </properties>
+                    <effect-instances>
+                        <effect-instance type="SetColor">
+                            <parameters>
+                                <blue>0</blue>
+                                <green>0.5</green>
+                                <red>1</red>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>266</x>
+                        <x>255</x>
                         <y>377</y>
                         <z>0</z>
-                        <width>116</width>
+                        <width>112</width>
                         <height>15</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
-                        <opacity>1</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
-                <instance type="PacmanLives" uid="70">
+                <instance type="LivesMarker" uid="70">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -1816,10 +1825,10 @@
                         <x>320</x>
                         <y>608</y>
                         <z>0</z>
-                        <width>52</width>
-                        <height>52</height>
+                        <width>45.714286804</width>
+                        <height>45.714286804</height>
                         <depth>0</depth>
-                        <hotspotX>0.541666687</hotspotX>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -2153,24 +2162,24 @@
             <instances>
                 <instance type="HighScoreText" uid="68">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>000000</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>224</x>
-                        <y>32</y>
+                        <y>28</y>
                         <z>0</z>
                         <width>192</width>
                         <height>32</height>
@@ -2183,24 +2192,24 @@
                 </instance>
                 <instance type="ScoreText" uid="67">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>000000</text>
-                        <scale>0.33</scale>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>32</x>
-                        <y>32</y>
+                        <y>28</y>
                         <z>0</z>
                         <width>192</width>
                         <height>32</height>
@@ -2213,17 +2222,17 @@
                 </instance>
                 <instance type="StaticText" uid="63">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>HIGH SCORE</text>
-                        <scale>0.33</scale>
+                        <text>High Score</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -2252,17 +2261,17 @@
                 </instance>
                 <instance type="StaticText" uid="64">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>1UP</text>
-                        <scale>0.33</scale>
+                        <text>1 Up</text>
+                        <scale>0.5</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-4</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <effect-instances>
@@ -2291,17 +2300,17 @@
                 </instance>
                 <instance type="MicroScore" uid="72">
                     <properties>
-                        <character-width>64</character-width>
-                        <character-height>96</character-height>
+                        <character-width>48</character-width>
+                        <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>XXX</text>
-                        <scale>0.25</scale>
+                        <scale>0.38</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-6</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <behavior-instances>
