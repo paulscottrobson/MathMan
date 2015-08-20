@@ -2166,7 +2166,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="StickBackground" uid="74">
+                <instance type="JoypadFrame" uid="74">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -2376,7 +2376,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="StickKnob" uid="71">
+                <instance type="JoypadButton" uid="71">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -2384,17 +2384,21 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <isEnabled>true</isEnabled>
-                        <maxRadius>56</maxRadius>
-                        <minRadius>20</minRadius>
-                        <xStart>0</xStart>
-                        <yStart>0</yStart>
-                        <knobAngle>0</knobAngle>
-                        <knobDistance>0</knobDistance>
-                        <returnVelocity>200</returnVelocity>
+                        <isEnabled>false</isEnabled>
+                        <startX>0</startX>
+                        <startY>0</startY>
                         <deltaX>0</deltaX>
                         <deltaY>0</deltaY>
+                        <minDistance>20</minDistance>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DragDrop">
+                            <properties>
+                                <axes>Both</axes>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

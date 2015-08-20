@@ -3,108 +3,146 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Joystick Controller</name>
     <events>
-        <event-block sid="1531372600559855">
+        <event-group description="Pacman specific" sid="1420877742623539" title="Popup/Release Joypad" />
+        <comment>Reset on start of layout</comment>
+        <event-block sid="3310649521370332">
             <conditions>
-                <condition id="-11" name="For Each" sid="2604786006243173" type="System">
-                    <param id="0" name="Object">JoystickController</param>
+                <condition id="-2" name="On start of layout" sid="8896494151127275" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4098473029876229" type="JoypadFrame">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4982593698246468" type="JoypadButton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="2063182519244574" type="JoypadButton">
+                    <param id="0" name="Instance variable">isEnabled</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="420851303028593" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaX</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="1788139139111575" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaY</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>On any touch start, position the background and remember the start position</comment>
+        <event-block sid="3077827376784156">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="6844959267974002" type="Touch" />
+                <condition id="-8" name="Is boolean instance variable set" sid="5475389620635019" type="JoypadButton">
+                    <param id="0" name="Instance variable">isEnabled</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-15" name="Set visible" sid="7896953749709717" type="JoypadFrame">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3008472343242745" type="JoypadButton">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="9809298061480395" type="JoypadButton">
+                    <param id="0" name="Instance variable">startX</param>
+                    <param id="1" name="Value">Touch.X</param>
+                </action>
+                <action id="-10" name="Set value" sid="3214868517168887" type="JoypadButton">
+                    <param id="0" name="Instance variable">startY</param>
+                    <param id="1" name="Value">Touch.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="9197960571500737" type="JoypadFrame">
+                    <param id="0" name="X">JoypadButton.startX</param>
+                    <param id="1" name="Y">JoypadButton.startY</param>
+                </action>
+                <action id="-3" name="Set position" sid="7683464943035272" type="JoypadButton">
+                    <param id="0" name="X">JoypadButton.startX</param>
+                    <param id="1" name="Y">JoypadButton.startY</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>When release, hide the background and button</comment>
+        <event-block sid="7708496540571017">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="2063529356372538" type="JoypadButton" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4750362777040794" type="JoypadFrame">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6414005389277474" type="JoypadButton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="8013250305940222" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaX</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="6943730391452336" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaY</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>While dragging, work out axis</comment>
+        <event-block sid="4642381889794414">
+            <conditions>
+                <condition behavior="DragDrop" id="0" name="Is dragging" sid="6637781847820088" type="JoypadButton" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="1426769514282138" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaX</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4190388812416954" type="JoypadButton">
+                    <param id="0" name="Instance variable">deltaY</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
             <sub-events>
-                <event-block sid="1796034761245838">
+                <comment>Are we far enough off the centre ?</comment>
+                <event-block sid="2485292881971569">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="5424544085693951" type="JoystickController">
-                            <param id="0" name="Instance variable">isEnabled</param>
+                        <condition id="-8" name="Compare two values" sid="3669335902303936" type="System">
+                            <param id="0" name="First value">distance(Touch.X,Touch.Y,JoypadButton.startX,JoypadButton.startY)</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">JoypadButton.minDistance</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="1644937113527776">
+                        <comment>Is it more X than Y - if so set X</comment>
+                        <event-block sid="6939481440868321">
                             <conditions>
-                                <condition id="4" name="Is touching object" sid="8574543907927483" type="Touch">
-                                    <param id="0" name="Object">JoystickController</param>
+                                <condition id="-8" name="Compare two values" sid="8621002428503318" type="System">
+                                    <param id="0" name="First value">abs(Touch.X-JoypadButton.startX)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">abs(Touch.Y-JoypadButton.startY)</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="9532178670756788" type="JoystickController">
-                                    <param id="0" name="Instance variable">knobDistance</param>
-                                    <param id="1" name="Value">min(JoystickController.maxRadius,distance(JoystickController.xStart,JoystickController.yStart,Touch.X,Touch.Y))</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="2870598263456559" type="JoystickController">
-                                    <param id="0" name="Instance variable">knobAngle</param>
-                                    <param id="1" name="Value">angle(JoystickController.xStart,JoystickController.yStart,Touch.X,Touch.Y)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="2544190367526022">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="9116281546669295" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="5321156716383647" type="JoystickController">
-                                    <param id="0" name="Instance variable">knobDistance</param>
-                                    <param id="1" name="Value">max(0,JoystickController.knobDistance-JoystickController.returnVelocity*dt)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="9839362326818685">
-                            <conditions>
-                                <condition id="-1" name="Every tick" sid="1604181192623056" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Set position" sid="3586564528401786" type="JoystickController">
-                                    <param id="0" name="X">JoystickController.xStart+cos(JoystickController.knobAngle)*JoystickController.knobDistance</param>
-                                    <param id="1" name="Y">JoystickController.yStart+sin(JoystickController.knobAngle)*JoystickController.knobDistance</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="831836895686765" type="JoystickController">
+                                <action id="-10" name="Set value" sid="2228551161977624" type="JoypadButton">
                                     <param id="0" name="Instance variable">deltaX</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="9489122174170899" type="JoystickController">
-                                    <param id="0" name="Instance variable">deltaY</param>
-                                    <param id="1" name="Value">0</param>
+                                    <param id="1" name="Value">(Touch.X &gt; JoypadButton.startX) ? 1 : -1</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="5057925346747135">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5486621519961539" type="JoystickController">
-                                            <param id="0" name="Instance variable">knobDistance</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">JoystickController.minRadius</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" sid="1235358807087315" type="JoystickController">
-                                            <param id="0" name="Instance variable">deltaX</param>
-                                            <param id="1" name="Value">cos(JoystickController.knobAngle)*JoystickController.knobDistance/JoystickController.maxRadius</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="1733949239069703" type="JoystickController">
-                                            <param id="0" name="Instance variable">deltaY</param>
-                                            <param id="1" name="Value">sin(JoystickController.knobAngle)*JoystickController.knobDistance/JoystickController.maxRadius</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                        </event-block>
+                        <comment>Else set Y</comment>
+                        <event-block sid="4904007201224344">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1796749891640486" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1923417483814778" type="JoypadButton">
+                                    <param id="0" name="Instance variable">deltaY</param>
+                                    <param id="1" name="Value">(Touch.Y &gt; JoypadButton.startY) ? 1 : -1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="4810375443266926">
-            <conditions>
-                <condition id="-18" name="On created" sid="7518619027494061" type="JoystickController" />
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="4857858134531982" type="JoystickController">
-                    <param id="0" name="Instance variable">xStart</param>
-                    <param id="1" name="Value">JoystickController.X</param>
-                </action>
-                <action id="-10" name="Set value" sid="9240497958617412" type="JoystickController">
-                    <param id="0" name="Instance variable">yStart</param>
-                    <param id="1" name="Value">JoystickController.Y</param>
-                </action>
-            </actions>
         </event-block>
     </events>
 </c2eventsheet>

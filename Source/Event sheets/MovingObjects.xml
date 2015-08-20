@@ -354,10 +354,10 @@
                                         <condition id="2" name="Key is down" sid="4098614834276912" type="Keyboard">
                                             <param id="0" name="Key">38 (Up arrow)</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="5809519151323257" type="StickKnob">
+                                        <condition id="-7" name="Compare instance variable" sid="6401412410404157" type="JoypadButton">
                                             <param id="0" name="Instance variable">deltaY</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">-0.5</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -375,10 +375,10 @@
                                         <condition id="2" name="Key is down" sid="8920160363738879" type="Keyboard">
                                             <param id="0" name="Key">40 (Down arrow)</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="6240610563909677" type="StickKnob">
+                                        <condition id="-7" name="Compare instance variable" sid="8972648046637441" type="JoypadButton">
                                             <param id="0" name="Instance variable">deltaY</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">0.5</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -396,10 +396,10 @@
                                         <condition id="2" name="Key is down" sid="2118197064931649" type="Keyboard">
                                             <param id="0" name="Key">37 (Left arrow)</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="5248817429778755" type="StickKnob">
+                                        <condition id="-7" name="Compare instance variable" sid="2936053688331052" type="JoypadButton">
                                             <param id="0" name="Instance variable">deltaX</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">-0.5</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -417,10 +417,10 @@
                                         <condition id="2" name="Key is down" sid="8580189717201141" type="Keyboard">
                                             <param id="0" name="Key">39 (Right arrow)</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="9767323196201892" type="StickKnob">
+                                        <condition id="-7" name="Compare instance variable" sid="1740716476756329" type="JoypadButton">
                                             <param id="0" name="Instance variable">deltaX</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">0.5</param>
+                                            <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
