@@ -47,7 +47,7 @@
                     <param id="0" name="Instance variable">isResetRequired</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action disabled="1" id="-10" name="Set value" sid="4153461366046364" type="Controller">
+                <action id="-10" name="Set value" sid="4153461366046364" type="Controller">
                     <param id="0" name="Instance variable">level</param>
                     <param id="1" name="Value">2</param>
                 </action>
@@ -376,16 +376,6 @@
                 <action id="-12" name="Subtract from" sid="788266460160586" type="Controller">
                     <param id="0" name="Instance variable">flashCount</param>
                     <param id="1" name="Value">1</param>
-                </action>
-                <action id="-28" name="Set effect parameter" sid="2836105098977245" type="Frames">
-                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
-                    <param id="1" name="Parameter index">0</param>
-                    <param id="2" name="Value">Controller.flashCount % 2 = 0 ? 0 : 100</param>
-                </action>
-                <action id="-28" name="Set effect parameter" sid="2169591012145802" type="Frames">
-                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
-                    <param id="1" name="Parameter index">1</param>
-                    <param id="2" name="Value">Controller.flashCount % 2 = 0 ? 0 : 100</param>
                 </action>
             </actions>
             <sub-events>

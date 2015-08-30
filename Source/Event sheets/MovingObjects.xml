@@ -11,13 +11,19 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="deltaTime" sid="1614810129886185" static="0" type="number">0.1</variable>
                         <event-block sid="3315434764056894">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="6173124025308935" type="System">
                                     <param id="0" name="Object">Moveable</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="4448779949397495" type="System">
+                                    <param id="0" name="Variable">deltaTime</param>
+                                    <param id="1" name="Value">dt</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="4532229603658968">
                                     <conditions>
@@ -157,6 +163,8 @@
                                             </actions>
                                         </event-block>
                                         <comment>If currently moving then try to move</comment>
+                                        <variable constant="0" name="offsetX" sid="3829389250417995" static="0" type="number">0</variable>
+                                        <variable constant="0" name="offsetY" sid="6768628649309655" static="0" type="number">0</variable>
                                         <event-block any="1" sid="987440437729223">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="6469053516057428" type="Moveable">
@@ -170,7 +178,16 @@
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="1417411128782221" type="System">
+                                                    <param id="0" name="Variable">offsetX</param>
+                                                    <param id="1" name="Value">deltaTime*Moveable.dx*Moveable.speed*Controller.speedScalar</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="6920441637819314" type="System">
+                                                    <param id="0" name="Variable">offsetY</param>
+                                                    <param id="1" name="Value">deltaTime*Moveable.dy*Moveable.speed*Controller.speedScalar</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <comment>If moving horizontally lock Y on centre axis</comment>
                                                 <event-block sid="2510870930156271">
@@ -207,8 +224,8 @@
                                                     <conditions>
                                                         <condition id="9" name="Is overlapping at offset" sid="5514163433913079" type="Moveable">
                                                             <param id="0" name="Object">Frames</param>
-                                                            <param id="1" name="Offset X">Moveable.dx*2</param>
-                                                            <param id="2" name="Offset Y">Moveable.dy*2</param>
+                                                            <param id="1" name="Offset X">offsetX*2</param>
+                                                            <param id="2" name="Offset Y">offsetY*2</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
@@ -226,14 +243,22 @@
                                                         <action id="-2" name="Set Y" sid="6541023106227076" type="Moveable">
                                                             <param id="0" name="Y">floor(Moveable.Y/MAZE_BOX_SIZE)*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
                                                         </action>
+                                                        <action id="-9" name="Set value" sid="2452289125630643" type="System">
+                                                            <param id="0" name="Variable">offsetX</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="7228661798752821" type="System">
+                                                            <param id="0" name="Variable">offsetY</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="5501064160906201">
                                                     <conditions>
                                                         <condition id="9" name="Is overlapping at offset" sid="2062423187751262" type="Moveable">
                                                             <param id="0" name="Object">Door</param>
-                                                            <param id="1" name="Offset X">2*Moveable.dx</param>
-                                                            <param id="2" name="Offset Y">2*Moveable.dy</param>
+                                                            <param id="1" name="Offset X">offsetX*2</param>
+                                                            <param id="2" name="Offset Y">offsetY*2</param>
                                                         </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="9489302172220994" type="Moveable">
                                                             <param id="0" name="Instance variable">dy</param>
@@ -256,17 +281,23 @@
                                                         <action id="-2" name="Set Y" sid="9140259903797889" type="Moveable">
                                                             <param id="0" name="Y">floor(Moveable.Y/MAZE_BOX_SIZE)*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
                                                         </action>
+                                                        <action id="-9" name="Set value" sid="5193538807598952" type="System">
+                                                            <param id="0" name="Variable">offsetX</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="812506229455251" type="System">
+                                                            <param id="0" name="Variable">offsetY</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <comment>Finally, actually move.</comment>
                                                 <event-block sid="5744625594596398">
-                                                    <conditions>
-                                                        <condition id="-1" name="Every tick" sid="7216054410850001" type="System" />
-                                                    </conditions>
+                                                    <conditions />
                                                     <actions>
                                                         <action id="-3" name="Set position" sid="1302633684527556" type="Moveable">
-                                                            <param id="0" name="X">Moveable.X+dt*Moveable.dx*Moveable.speed*Controller.speedScalar</param>
-                                                            <param id="1" name="Y">Moveable.Y+dt*Moveable.dy*Moveable.speed*Controller.speedScalar</param>
+                                                            <param id="0" name="X">Moveable.X+offsetX</param>
+                                                            <param id="1" name="Y">Moveable.Y+offsetY</param>
                                                         </action>
                                                     </actions>
                                                     <sub-events>
