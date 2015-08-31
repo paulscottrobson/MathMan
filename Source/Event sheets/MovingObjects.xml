@@ -251,6 +251,14 @@
                                                             <param id="0" name="Variable">offsetY</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
+                                                        <action id="-10" name="Set value" sid="6676843555904364" type="JoypadButton">
+                                                            <param id="0" name="Instance variable">deltaX</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="7589334937235999" type="JoypadButton">
+                                                            <param id="0" name="Instance variable">deltaY</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="5501064160906201">
@@ -287,6 +295,14 @@
                                                         </action>
                                                         <action id="-9" name="Set value" sid="812506229455251" type="System">
                                                             <param id="0" name="Variable">offsetY</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="5508681948527122" type="JoypadButton">
+                                                            <param id="0" name="Instance variable">deltaX</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="13094673503599" type="JoypadButton">
+                                                            <param id="0" name="Instance variable">deltaY</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
                                                     </actions>
@@ -775,7 +791,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>If running away use that animation</comment>
+                        <comment>Update the animation</comment>
                         <event-block sid="7785108006082544">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="5572802500896721" type="System" />

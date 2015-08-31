@@ -28,9 +28,7 @@
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects>
-        <effect author="Scirra" id="setcolor">Set color</effect>
-    </used-effects>
+    <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -45,7 +43,7 @@
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
-        <prop name="Enable WebGL">On</prop>
+        <prop name="Enable WebGL">Off</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
@@ -69,11 +67,6 @@
             </object-type>
             <object-type name="StaticText" sid="7910744815108654">
                 <plugin id="Spritefont2" />
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
                 <texture original-source="C:\MathMan\Graphics\font4864.png" />
             </object-type>
             <object-type name="MicroScore" sid="891627178321422">
@@ -83,11 +76,6 @@
                         <behavior id="Fade" />
                     </behavior-type>
                 </behaviors>
-                <effects>
-                    <effect-type name="SetColor">
-                        <effect id="setcolor" />
-                    </effect-type>
-                </effects>
                 <texture original-source="C:\MathMan\Graphics\font4864.png" />
             </object-type>
         </object-folder>
@@ -106,6 +94,9 @@
                 <behaviors>
                     <behavior-type name="Timer" sid="2925437743897897">
                         <behavior id="Timer" />
+                    </behavior-type>
+                    <behavior-type name="Fade" sid="3101307736468054">
+                        <behavior id="Fade" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -174,12 +165,13 @@
             <object-type name="JoypadButton" sid="942713083693651">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable comment="True if stick enabled" name="isEnabled" sid="6231738457020768" type="boolean" />
+                    <instance-variable comment="True if stick enabled" name="isJoypadEnabled" sid="6231738457020768" type="boolean" />
                     <instance-variable name="startX" sid="8694847379627422" type="number" />
                     <instance-variable name="startY" sid="1360769633981273" type="number" />
                     <instance-variable name="deltaX" sid="563155034668259" type="number" />
                     <instance-variable name="deltaY" sid="3139971857937617" type="number" />
                     <instance-variable name="minDistance" sid="2117004465682277" type="number" />
+                    <instance-variable name="isTouchAreaEnabled" sid="662597005419345" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="DragDrop" sid="1111383086240225">

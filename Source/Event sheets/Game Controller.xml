@@ -49,7 +49,11 @@
                 </action>
                 <action id="-10" name="Set value" sid="4153461366046364" type="Controller">
                     <param id="0" name="Instance variable">level</param>
-                    <param id="1" name="Value">2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action disabled="1" id="-10" name="Set value" sid="7059422223656308" type="Controller">
+                    <param id="0" name="Instance variable">level</param>
+                    <param id="1" name="Value">12</param>
                 </action>
             </actions>
         </event-block>
@@ -68,8 +72,8 @@
         <comment>End of intro, start game.</comment>
         <event-block sid="5293338043887477">
             <conditions>
-                <condition id="0" name="On ended" sid="8898099874701706" type="Audio">
-                    <param id="0" name="Tag">&quot;starting&quot;</param>
+                <condition behavior="Timer" id="0" name="On timer" sid="8898099874701706" type="Controller">
+                    <param id="0" name="Tag">&quot;endOfIntro&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -271,6 +275,11 @@
                                 <action behavior="Rotate" id="0" name="Set speed" sid="8945935086296487" type="Pacman">
                                     <param id="0" name="Speed">720</param>
                                 </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="9252411087225918" type="Controller">
+                                    <param id="0" name="Duration">4</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;pacmanDied&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -280,8 +289,8 @@
         <comment>We have died</comment>
         <event-block sid="5871159577100545">
             <conditions>
-                <condition id="0" name="On ended" sid="9400173201018698" type="Audio">
-                    <param id="0" name="Tag">&quot;deathSound&quot;</param>
+                <condition behavior="Timer" id="0" name="On timer" sid="9400173201018698" type="Controller">
+                    <param id="0" name="Tag">&quot;pacmanDied&quot;</param>
                 </condition>
             </conditions>
             <actions>
@@ -377,8 +386,25 @@
                     <param id="0" name="Instance variable">flashCount</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="-15" name="Set visible" sid="6376187479565938" type="Frames">
+                    <param id="0" name="Visibility">0</param>
+                </action>
             </actions>
             <sub-events>
+                <event-block sid="8838448472499463">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8030890848026522" type="System">
+                            <param id="0" name="First value">Controller.flashCount % 2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4927197491572481" type="Frames">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Complete</comment>
                 <event-block sid="3667281727012952">
                     <conditions>
@@ -549,6 +575,11 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;starting&quot;</param>
                         </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="9921372562213292" type="Controller">
+                            <param id="0" name="Duration">4</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;endOfIntro&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Level 2+ no intro</comment>
@@ -621,13 +652,7 @@
                             <param id="1" name="Value">max(Controller.score,Controller.highScore)</param>
                         </action>
                         <action id="0" name="Set text" sid="4543205914919738" type="ScoreText">
-                            <param id="0" name="Text">right(&quot;      &quot; &amp; Controller.score,6)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="6381116520017305" type="HighScoreText">
-                            <param id="0" name="Text">right(&quot;      &quot; &amp; Controller.highScore,6)</param>
-                        </action>
-                        <action disabled="1" id="0" name="Set text" sid="993184520829155" type="HighScoreText">
-                            <param id="0" name="Text">&quot;LV:&quot; &amp; Controller.level</param>
+                            <param id="0" name="Text">right(&quot;000000&quot; &amp; Controller.score,6)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -645,8 +670,8 @@
                 <event-block sid="3228446266131601">
                     <conditions>
                         <condition id="-2" name="Compare Y" sid="6916284184639733" type="LivesMarker">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Y co-ordinate">LayoutHeight-MAZE_BOX_SIZE</param>
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">MAZE_BOX_SIZE*2</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -675,8 +700,8 @@
                                 <action id="-3" name="Create object" sid="9962187131006209" type="System">
                                     <param id="0" name="Object to create">LivesMarker</param>
                                     <param id="1" name="Layer">2</param>
-                                    <param id="2" name="X">(loopindex-1) * MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
-                                    <param id="3" name="Y">LayoutHeight-MAZE_BOX_SIZE/2</param>
+                                    <param id="2" name="X">LayoutWidth-(loopindex-1) * MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
+                                    <param id="3" name="Y">MAZE_BOX_SIZE/2</param>
                                 </action>
                             </actions>
                         </event-block>

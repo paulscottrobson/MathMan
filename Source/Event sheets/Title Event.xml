@@ -108,7 +108,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="7802987348173645" type="Blanker" />
+                <action behavior="Fade" id="0" name="Restart fade" sid="7802987348173645" type="Blanker" />
             </actions>
         </event-block>
     </events>
