@@ -3,79 +3,89 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Title Event</name>
     <events>
-        <comment>Key for local storage</comment>
-        <variable comment="key for localstorage" constant="1" name="STOREKEY" sid="8672086282322975" static="0" type="text">PaulRobsonPacman.HighScore</variable>
         <comment>On start, update high score and score and stop ghost animation</comment>
         <event-block sid="3978707527815892">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="3563553877359106" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="8817717716403541" type="ScoreText">
-                    <param id="0" name="Text">right(&quot;      &quot; &amp; Controller.score,6)</param>
-                </action>
-                <action id="0" name="Set text" sid="1450466115020013" type="HighScoreText">
-                    <param id="0" name="Text">right(&quot;      &quot; &amp; Controller.highScore,6)</param>
-                </action>
                 <action id="2" name="Stop" sid="4390381550479241" type="Ghost" />
-                <action id="5" name="Check item exists" sid="9394820528622974" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
+                <action id="0" name="Set text" sid="8310686191752418" type="SubTitleText">
+                    <param id="0" name="Text">GAMESUBTITLE</param>
+                </action>
+                <action id="0" name="Set text" sid="6747080594647435" type="TitleText">
+                    <param id="0" name="Text">GAMETITLE</param>
                 </action>
             </actions>
         </event-block>
-        <comment>If store key exists, retrieve it.</comment>
-        <event-block sid="1836440964859093">
+        <comment>Tap a button, go to that page</comment>
+        <event-block sid="756181781502582">
             <conditions>
-                <condition id="9" name="On item exists" sid="5391685459064022" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                </condition>
+                <condition id="14" name="On tap" sid="503048541802546" type="Touch" />
             </conditions>
-            <actions>
-                <action id="1" name="Get item" sid="9990487829063616" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>If it is missing, set the default - this must be a first run, so there won&apos;t be a score to update.</comment>
-        <event-block sid="4668822344128433">
-            <conditions>
-                <condition id="10" name="On item missing" sid="19269852418137" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Set item" sid="8264651284967175" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                    <param id="1" name="Value">1000</param>
-                </action>
-            </actions>
-        </event-block>
-        <comment>If store key is retrieved, update the high score and write it out</comment>
-        <event-block sid="2198723947496503">
-            <conditions>
-                <condition id="1" name="On item get" sid="3060827948810058" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="332352346802575" type="Controller">
-                    <param id="0" name="Instance variable">highScore</param>
-                    <param id="1" name="Value">max(LocalStorage.ItemValue,Controller.score)</param>
-                </action>
-                <action id="0" name="Set text" sid="3162571323947797" type="HighScoreText">
-                    <param id="0" name="Text">right(&quot;      &quot; &amp; Controller.highScore,6)</param>
-                </action>
-                <action id="0" name="Set item" sid="5468092555665601" type="LocalStorage">
-                    <param id="0" name="Key">STOREKEY</param>
-                    <param id="1" name="Value">Controller.highScore</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <comment>Did we hit a title button</comment>
+                <event-block sid="2296746956840651">
+                    <conditions>
+                        <condition id="-36" name="Pick overlapping point" sid="7036616440034356" type="System">
+                            <param id="0" name="Object">TitleButton</param>
+                            <param id="1" name="X">Touch.X</param>
+                            <param id="2" name="Y">Touch.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>If its action begins with http: then go to that web page</comment>
+                        <event-block sid="2434198608364546">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9107746290268397" type="System">
+                                    <param id="0" name="First value">left(TitleButton.ButtonAction,5)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;http:&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Go to URL" sid="394813252143011" type="Browser">
+                                    <param id="0" name="URL">TitleButton.ButtonAction</param>
+                                    <param id="1" name="Target">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Otherwise go to the layout with that name</comment>
+                        <event-block sid="1892110906850862">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5046331269254712" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="9999215667876697" type="System">
+                                    <param id="0" name="Layout">TitleButton.ButtonAction</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Tapped, but not a button, so start the game.</comment>
+                <event-block sid="9921051569075665">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6321765396842951" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5360851021046875" type="System">
+                            <param id="0" name="Layout">Game Screen</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="9157007743538043" type="Controller">
+                            <param id="0" name="Instance variable">isResetRequired</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>Any key starts the game</comment>
         <event-block any="1" sid="2449472721766733">
             <conditions>
                 <condition id="1" name="On any key pressed" sid="750420115755026" type="Keyboard" />
-                <condition id="14" name="On tap" sid="1868883273477773" type="Touch" />
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="5989942912686079" type="System">
@@ -109,6 +119,22 @@
             </conditions>
             <actions>
                 <action behavior="Fade" id="0" name="Restart fade" sid="7802987348173645" type="Blanker" />
+            </actions>
+        </event-block>
+        <event-block sid="4546176630556758">
+            <conditions>
+                <condition id="-18" name="On created" sid="6753895009432791" type="TitleButton" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4854708520505827" type="System">
+                    <param id="0" name="Object to create">TitleButtonText</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">TitleButton.BBoxLeft+TitleButton.Width/2</param>
+                    <param id="3" name="Y">TitleButton.BBoxTop+TitleButton.Height/2</param>
+                </action>
+                <action id="0" name="Set text" sid="2049281502860593" type="TitleButtonText">
+                    <param id="0" name="Text">TitleButton.ButtonText</param>
+                </action>
             </actions>
         </event-block>
     </events>

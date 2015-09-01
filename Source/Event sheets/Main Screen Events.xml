@@ -4,6 +4,8 @@
     <name>Main Screen Events</name>
     <events>
         <event-group description="" sid="7837759549000638" title="Main Events for Game" />
+        <comment>Configuration </comment>
+        <include>Configuration</include>
         <comment>Code to tidy up and reset frame</comment>
         <include>Maze Construction</include>
         <comment>General code for moving objects</comment>

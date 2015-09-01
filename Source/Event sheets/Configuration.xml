@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Configuration</name>
+    <events>
+        <event-group description="Editable parameters go here" sid="6563877642273801" title="Configuration" />
+        <comment>Key used for storage of high score tables.</comment>
+        <variable comment="key for localstorage" constant="1" name="LOCALSTOREKEY" sid="8672086282322975" static="0" type="text">Mathman.Storage</variable>
+        <comment>1st title</comment>
+        <variable comment="The main title" constant="1" name="GameTitle" sid="8621910254052375" static="0" type="text">&quot;(Mathman)&quot;</variable>
+        <comment>2nd title</comment>
+        <variable comment="The sub title" constant="1" name="GAMESUBTITLE" sid="7916867474921333" static="0" type="text">&quot;(Answer Questions to Beat the Ghosts)&quot;</variable>
+        <comment>How fast the levels accelerate.</comment>
+        <variable comment="Speed multiplier per level" constant="1" name="SPEEDMULTIPLIER" sid="4111865471935541" static="0" type="number">0.08</variable>
+        <comment>Where the power pills are, coordinate pairs, LEFT SIDE only. Note format x,y:x,y:x,y etc.</comment>
+        <variable comment="Power pills LHS grid coordinates seperated by colon" constant="1" name="POWERPILLS" sid="1480143860831274" static="0" type="text">0,2:0,9:2,6</variable>
+        <comment>How long the ghosts can be chased for (note, time reduced at later levels)</comment>
+        <variable comment="Chase time is at least this" constant="1" name="CHASETIMEMIN" sid="1243801616059891" static="0" type="number">3</variable>
+        <variable comment="Chase time is at most this" constant="1" name="CHASETIMEMAX" sid="9878282190978904" static="0" type="number">11</variable>
+    </events>
+</c2eventsheet>

@@ -162,37 +162,42 @@
                 <action id="-9" name="Destroy" sid="618897321707255" type="Dot" />
             </actions>
             <sub-events>
-                <comment>Create the four power pills</comment>
+                <comment>Create the four power pills, extract coordinates from the POWERPILL configuration value</comment>
                 <event-block sid="3242628491625637">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="2123624448737273" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="2765889096708403" type="System">
-                            <param id="0" name="Object to create">PowerPill</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">MAZE_BOX_SIZE/2</param>
-                            <param id="3" name="Y">MAZE_BOX_SIZE*5/2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="5609189100977633" type="System">
-                            <param id="0" name="Object to create">PowerPill</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">MAZE_BOX_SIZE/2</param>
-                            <param id="3" name="Y">MAZE_BOX_SIZE*19/2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="8378507162600072" type="System">
-                            <param id="0" name="Object to create">PowerPill</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">LayoutWidth-MAZE_BOX_SIZE/2</param>
-                            <param id="3" name="Y">MAZE_BOX_SIZE*5/2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="1183615086845597" type="System">
-                            <param id="0" name="Object to create">PowerPill</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">LayoutWidth-MAZE_BOX_SIZE/2</param>
-                            <param id="3" name="Y">MAZE_BOX_SIZE*19/2</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="coord" sid="6629236467227349" static="0" type="text"></variable>
+                        <event-block sid="4547302077823001">
+                            <conditions>
+                                <condition id="-10" name="For" sid="3762723563069004" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(POWERPILLS,&quot;:&quot;)-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6134951420676692" type="System">
+                                    <param id="0" name="Variable">coord</param>
+                                    <param id="1" name="Value">tokenat(POWERPILLS,loopindex,&quot;:&quot;)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1334375992849705" type="System">
+                                    <param id="0" name="Object to create">PowerPill</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">int(tokenat(coord,0,&quot;,&quot;))*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
+                                    <param id="3" name="Y">int(tokenat(coord,1,&quot;,&quot;))*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="9888279508793321" type="System">
+                                    <param id="0" name="Object to create">PowerPill</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">LayoutWidth-(int(tokenat(coord,0,&quot;,&quot;))*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2)</param>
+                                    <param id="3" name="Y">int(tokenat(coord,1,&quot;,&quot;))*MAZE_BOX_SIZE+MAZE_BOX_SIZE/2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Create all the dots on a grid, initially everywhere</comment>
                 <event-block sid="4323215844943285">

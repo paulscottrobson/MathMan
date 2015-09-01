@@ -134,7 +134,7 @@
                     <param id="1" name="Tag (optional)">&quot;background&quot;</param>
                 </action>
                 <action behavior="Timer" id="0" name="Start timer" sid="7861148326731854" type="Controller">
-                    <param id="0" name="Duration">max(3,12-Controller.level)</param>
+                    <param id="0" name="Duration">max(CHASETIMEMIN,CHASETIMEMAX+1-Controller.level)</param>
                     <param id="1" name="Type">0</param>
                     <param id="2" name="Tag">&quot;chasingEnded&quot;</param>
                 </action>
@@ -325,6 +325,7 @@
                             <param id="0" name="Name">&quot;updateLives&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="33" name="Stop all" sid="2285509877858765" type="Audio" />
                         <action id="-15" name="Set visible" sid="7557872244238744" type="Fruit">
                             <param id="0" name="Visibility">0</param>
                         </action>
@@ -533,7 +534,7 @@
                 </action>
                 <action id="-10" name="Set value" sid="3111026175616118" type="Controller">
                     <param id="0" name="Instance variable">speedScalar</param>
-                    <param id="1" name="Value">1+(min(Controller.level-1,13))*0.12</param>
+                    <param id="1" name="Value">1+(min(Controller.level-1,13))*SPEEDMULTIPLIER</param>
                 </action>
                 <action id="0" name="Call function" sid="9306541591511845" type="Function">
                     <param id="0" name="Name">&quot;addToScore&quot;</param>
