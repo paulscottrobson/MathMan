@@ -2,7 +2,7 @@
 <c2layout>
     <name>Game Screen</name>
     <sid>6463276603280504</sid>
-    <event-sheet>Game Events</event-sheet>
+    <event-sheet>Main Screen Events</event-sheet>
     <size>
         <width>640</width>
         <height>832</height>

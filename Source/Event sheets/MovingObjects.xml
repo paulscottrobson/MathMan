@@ -12,6 +12,7 @@
                     <actions />
                     <sub-events>
                         <variable constant="0" name="deltaTime" sid="1614810129886185" static="0" type="number">0.1</variable>
+                        <comment>For each moveable - this is Pacman and Ghosts</comment>
                         <event-block sid="3315434764056894">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="6173124025308935" type="System">
@@ -25,6 +26,7 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <comment>If under control and game running, figure out which ways we can actually go.</comment>
                                 <event-block sid="4532229603658968">
                                     <conditions>
                                         <condition id="-8" name="Is boolean instance variable set" sid="4692513880972335" type="Moveable">
@@ -85,7 +87,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <comment>Call the function to decide what we want it to do.</comment>
+                                        <comment>Call the function to decide what we would like the moveable to do - varies for Pacman and Ghosts.</comment>
                                         <event-block sid="8389177767916061">
                                             <conditions>
                                                 <condition id="-1" name="Every tick" sid="4054456415430861" type="System" />
@@ -363,7 +365,6 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <comment>Work through all moveables.</comment>
                     </sub-events>
                 </event-block>
             </sub-events>
@@ -379,7 +380,7 @@
                     </conditions>
                     <actions />
                 </event-block>
-                <comment>Pacman control function - this uses the keyboard.</comment>
+                <comment>Pacman control function - this uses the keyboard and one of the Joystick controllers.</comment>
                 <event-block sid="3140837307904583">
                     <conditions>
                         <condition id="0" name="On function" sid="3294822000639124" type="Function">

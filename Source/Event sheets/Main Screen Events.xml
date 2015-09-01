@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Game Events</name>
+    <name>Main Screen Events</name>
     <events>
+        <event-group description="" sid="7837759549000638" title="Main Events for Game" />
         <comment>Code to tidy up and reset frame</comment>
         <include>Maze Construction</include>
         <comment>General code for moving objects</comment>

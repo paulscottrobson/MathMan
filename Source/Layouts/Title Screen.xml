@@ -74,7 +74,7 @@
                         <speedScalar>1</speedScalar>
                         <highScore>1000</highScore>
                         <flashCount>0</flashCount>
-                        <nextGhostEastScore>0</nextGhostEastScore>
+                        <nextGhostEatScore>0</nextGhostEatScore>
                         <isResetRequired>true</isResetRequired>
                     </instance-variables>
                     <behavior-instances>

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Maze Construction</name>
     <events>
+        <event-group description="" sid="358893266409143" title="Tidy up the Maze and complete it" />
         <comment>Length of each maze box segment</comment>
         <variable comment="Frame size (long)" constant="1" name="MAZE_BOX_SIZE" sid="7845801931263286" static="0" type="number">64</variable>
         <comment>How close it has to be to the centre to allow movement in that axis</comment>
@@ -19,6 +20,7 @@
             <actions />
             <sub-events>
                 <variable comment="temporary for size of cloned object" constant="0" name="size" sid="858012323270944" static="0" type="number">0</variable>
+                <comment>Mirror verticals</comment>
                 <event-block sid="8827068590894752">
                     <conditions>
                         <condition id="-11" name="For Each" sid="4561548444669283" type="System">
@@ -46,6 +48,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Mirror horizontals</comment>
                 <event-block sid="9118293654883475">
                     <conditions>
                         <condition id="-11" name="For Each" sid="1604280302151369" type="System">
@@ -71,7 +74,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Tidy up positions and sizes</comment>
+        <comment>Tidy up positions and sizes - they are roughly positioned and size, make them consistent</comment>
         <event-block sid="5574519893889003">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="5573256895874813" type="System" />
@@ -147,7 +150,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Reset all the dots and power pills</comment>
+        <event-group description="" sid="5449094159505742" title="Reset all the dots and power pills" />
         <event-block sid="7568976397396934">
             <conditions>
                 <condition id="0" name="On function" sid="1062135622324306" type="Function">
@@ -191,7 +194,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Create all the dots on a grid</comment>
+                <comment>Create all the dots on a grid, initially everywhere</comment>
                 <event-block sid="4323215844943285">
                     <conditions>
                         <condition id="-10" name="For" sid="7440393898004697" type="System">
@@ -249,7 +252,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Reset All the Ghosts</comment>
+        <event-group description="" sid="7716179339990448" title="Reset all the Ghost objects" />
         <event-block sid="4328354081649981">
             <conditions>
                 <condition id="0" name="On function" sid="2460664917448638" type="Function">
@@ -258,6 +261,7 @@
             </conditions>
             <actions />
             <sub-events>
+                <comment>Chuck all the old ones</comment>
                 <event-block sid="7144344682060293">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="9260451680879507" type="System" />
@@ -266,6 +270,7 @@
                         <action id="-9" name="Destroy" sid="9312373981359442" type="Ghost" />
                     </actions>
                 </event-block>
+                <comment>And create 4 new ones with varying animations and intelligence</comment>
                 <event-block sid="5035552413881371">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="2988683053428998" type="System" />
@@ -352,7 +357,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Reset the Pacman</comment>
+        <event-group description="" sid="2928196502526808" title="Reset the Pacman" />
         <event-block sid="4101759867533066">
             <conditions>
                 <condition id="0" name="On function" sid="473390122981519" type="Function">
@@ -369,6 +374,7 @@
                 </action>
             </actions>
             <sub-events>
+                <comment>Remove any dots the Pacman is on initially.</comment>
                 <event-block sid="4536365443058004">
                     <conditions>
                         <condition id="9" name="Is overlapping at offset" sid="1690431365335499" type="Pacman">

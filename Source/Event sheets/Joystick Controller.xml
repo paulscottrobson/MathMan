@@ -148,7 +148,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Control by tap area</comment>
+        <event-group description="Control by area touched" sid="3196033997132577" title="Screen touch control" />
         <event-block sid="3778919528975364">
             <conditions>
                 <condition id="14" name="On tap" sid="640063506352973" type="Touch" />
@@ -167,6 +167,7 @@
                 </action>
             </actions>
             <sub-events>
+                <comment>Bottom quarter, top quarter ? If so move vertically</comment>
                 <event-block any="1" sid="7589575111357421">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="151997221541924" type="System">
@@ -187,6 +188,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Otherwise left or right dependent on touch position.</comment>
                 <event-block sid="4770596225965183">
                     <conditions>
                         <condition id="-22" name="Else" sid="8610473174264032" type="System" />

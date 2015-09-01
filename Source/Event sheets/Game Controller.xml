@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Controller</name>
     <events>
+        <event-group description="The game controller object controls the flow of the game." sid="2900268202702149" title="Game Controller" />
         <comment>Debugging feature. Global is created on Title Screen, but if run from here create one to use.</comment>
         <event-block sid="1283037572570142">
             <conditions>
@@ -69,7 +70,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>End of intro, start game.</comment>
+        <comment>End of intro, start game. Handles the case for Level 1 where a tune is played before starting.</comment>
         <event-block sid="5293338043887477">
             <conditions>
                 <condition behavior="Timer" id="0" name="On timer" sid="8898099874701706" type="Controller">
@@ -89,7 +90,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Hit dot</comment>
+        <comment>Hit dot, remove it, score it.</comment>
         <event-block sid="1534232288726434">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="3836127642768702" type="Pacman">
@@ -110,7 +111,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Hit Power pill</comment>
+        <comment>Hit Power pill, so start chasing.</comment>
         <event-block sid="824778676239735">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="1598119371772273" type="Pacman">
@@ -138,11 +139,12 @@
                     <param id="2" name="Tag">&quot;chasingEnded&quot;</param>
                 </action>
                 <action id="-10" name="Set value" sid="8313329459726434" type="Controller">
-                    <param id="0" name="Instance variable">nextGhostEastScore</param>
+                    <param id="0" name="Instance variable">nextGhostEatScore</param>
                     <param id="1" name="Value">100</param>
                 </action>
             </actions>
             <sub-events>
+                <comment>Tell all the ghosts they are being chased.</comment>
                 <event-block sid="6244362360066903">
                     <conditions>
                         <condition id="-11" name="For Each" sid="7426345899925564" type="System">
@@ -165,7 +167,7 @@
                     <param id="0" name="Tag">&quot;chasingEnded&quot;</param>
                 </condition>
                 <condition id="-7" name="Compare instance variable" sid="3451123166832778" type="Controller">
-                    <param id="0" name="Instance variable">nextGhostEastScore</param>
+                    <param id="0" name="Instance variable">nextGhostEatScore</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1600</param>
                 </condition>
@@ -182,6 +184,7 @@
                 </action>
             </actions>
             <sub-events>
+                <comment>Tell all ghosts they are the chaser</comment>
                 <event-block sid="1268205158282834">
                     <conditions>
                         <condition id="-11" name="For Each" sid="3446622002742935" type="System">
@@ -238,7 +241,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="2115644737209406" type="Function">
                                     <param id="0" name="Name">&quot;addToScore&quot;</param>
-                                    <param id="1" name="Parameter {n}">Controller.nextGhostEastScore</param>
+                                    <param id="1" name="Parameter {n}">Controller.nextGhostEatScore</param>
                                 </action>
                                 <action id="0" name="Spawn another object" sid="8427161387147739" type="Ghost">
                                     <param id="0" name="Object">MicroScore</param>
@@ -246,15 +249,15 @@
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2634896226893004" type="MicroScore">
-                                    <param id="0" name="Text">Controller.nextGhostEastScore</param>
+                                    <param id="0" name="Text">Controller.nextGhostEatScore</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="8937230966983253" type="Controller">
-                                    <param id="0" name="Instance variable">nextGhostEastScore</param>
-                                    <param id="1" name="Value">Controller.nextGhostEastScore * 2</param>
+                                    <param id="0" name="Instance variable">nextGhostEatScore</param>
+                                    <param id="1" name="Value">Controller.nextGhostEatScore * 2</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>If this is the case, we are dead.</comment>
+                        <comment>If the ghosts are chasing us, we have died, so play tune and start animation</comment>
                         <event-block sid="7135178722114879">
                             <conditions>
                                 <condition id="-22" name="Else" sid="8385104322466898" type="System" />
@@ -286,7 +289,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>We have died</comment>
+        <comment>Death animation has ended, lose a life</comment>
         <event-block sid="5871159577100545">
             <conditions>
                 <condition behavior="Timer" id="0" name="On timer" sid="9400173201018698" type="Controller">
@@ -344,7 +347,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Level Completed</comment>
+        <comment>Level Completed - start flashing the maze and stop any further movement.</comment>
         <event-block sid="5403060521018531">
             <conditions>
                 <condition id="-8" name="Compare two values" sid="9110168227194062" type="System">
@@ -405,7 +408,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Complete</comment>
+                <comment>Flash is completed, start with next level</comment>
                 <event-block sid="3667281727012952">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="6685123634951357" type="Controller">
@@ -508,7 +511,7 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Start a new level</comment>
+        <event-group description="Called on layout start to create a new level." sid="775653176510813" title="Create a new Level" />
         <event-block sid="1514091084316405">
             <conditions>
                 <condition id="0" name="On function" sid="1852533400845761" type="Function">
@@ -602,7 +605,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Function to add to and update the score</comment>
+        <event-group description="" sid="648487328101595" title="Update the score and high score" />
         <event-block sid="7518038246733477">
             <conditions>
                 <condition id="0" name="On function" sid="711650932495418" type="Function">
@@ -658,7 +661,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>Function to update the lives at the bottom of the screen.</comment>
+        <event-group description="" sid="8034159028523749" title="Update the lives at the bottom of the screen" />
         <event-block sid="6076047359978053">
             <conditions>
                 <condition id="0" name="On function" sid="5249078766988028" type="Function">
@@ -667,6 +670,7 @@
             </conditions>
             <actions />
             <sub-events>
+                <comment>Remove any old lives markers</comment>
                 <event-block sid="3228446266131601">
                     <conditions>
                         <condition id="-2" name="Compare Y" sid="6916284184639733" type="LivesMarker">
@@ -678,6 +682,7 @@
                         <action id="-9" name="Destroy" sid="3437341699658156" type="LivesMarker" />
                     </actions>
                 </event-block>
+                <comment>If we have some lives left, display them.</comment>
                 <event-block sid="1288614583066533">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="8296294861704252" type="Controller">
