@@ -10,6 +10,7 @@
     <unique-id>14p66e7tjgvfq</unique-id>
     <saved-with-version>21202</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -198,6 +199,19 @@
             </object-type>
             <object-type name="Browser" sid="2688370218876513">
                 <plugin id="Browser" />
+            </object-type>
+            <object-type name="EventTimer" sid="3363600904039463">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Timer" sid="1027543310914683">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5079061876076369" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="Maze">
@@ -701,6 +715,26 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="HiScoreTable" sid="1569262430101605">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="HighScoreTableTextItem" sid="3835345826088598">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Fade" sid="9156830595006303">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\MathMan\Graphics\font4864.png" />
+        </object-type>
+        <object-type name="Logo" sid="9552622892967916">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2917172343709701" speed="5">
+                    <frame duration="1" hotspotX="0.503922" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Collectable" plugin-id="Sprite" sid="3996633519157558">
@@ -748,6 +782,7 @@
     <layout-folder>
         <layout>Game Screen.xml</layout>
         <layout>Title Screen.xml</layout>
+        <layout>High Score Screen.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Main Screen Events.xml</event-sheet>
@@ -757,6 +792,7 @@
         <event-sheet>Title Event.xml</event-sheet>
         <event-sheet>Joystick Controller.xml</event-sheet>
         <event-sheet>Configuration.xml</event-sheet>
+        <event-sheet>High Score Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="66" />

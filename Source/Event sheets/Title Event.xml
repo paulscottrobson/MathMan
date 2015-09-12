@@ -16,6 +16,11 @@
                 <action id="0" name="Set text" sid="6747080594647435" type="TitleText">
                     <param id="0" name="Text">GAMETITLE</param>
                 </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="8122456345335903" type="EventTimer">
+                    <param id="0" name="Duration">8</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;GotoHighScore&quot;</param>
+                </action>
             </actions>
         </event-block>
         <comment>Tap a button, go to that page</comment>
@@ -104,7 +109,7 @@
             </conditions>
             <actions>
                 <action behavior="Timer" id="0" name="Start timer" sid="2307255070659292" type="Blanker">
-                    <param id="0" name="Duration">1.0*Blanker.seq</param>
+                    <param id="0" name="Duration">0.4*Blanker.seq</param>
                     <param id="1" name="Type">0</param>
                     <param id="2" name="Tag">&quot;&quot;</param>
                 </action>
@@ -134,6 +139,74 @@
                 </action>
                 <action id="0" name="Set text" sid="2049281502860593" type="TitleButtonText">
                     <param id="0" name="Text">TitleButton.ButtonText</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Initially, set all high score to 001000AAA, try to load the high score table</comment>
+        <event-block sid="1868154529690158">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8066866816836988" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Clear" sid="5517700495671554" type="HiScoreTable" />
+                <action id="5" name="Check item exists" sid="6904339517923741" type="LocalStorage">
+                    <param id="0" name="Key">LOCALSTOREKEY</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7820204760180493">
+                    <conditions>
+                        <condition id="-10" name="For" sid="5291181296192687" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="5141019089959372" type="HiScoreTable">
+                            <param id="0" name="X">loopindex</param>
+                            <param id="1" name="Value">right(&quot;000000&quot;&amp;(200-loopindex*10),6) &amp;&quot;AAA&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>If it exists, retrieve it</comment>
+        <event-block sid="8450336412669049">
+            <conditions>
+                <condition id="9" name="On item exists" sid="4712043510995504" type="LocalStorage">
+                    <param id="0" name="Key">LOCALSTOREKEY</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="9650932508062156" type="LocalStorage">
+                    <param id="0" name="Key">LOCALSTOREKEY</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>When retrieved put it in the high score table</comment>
+        <event-block sid="9490614605344365">
+            <conditions>
+                <condition id="1" name="On item get" sid="9146322257468504" type="LocalStorage">
+                    <param id="0" name="Key">LOCALSTOREKEY</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Load" sid="2691304725203542" type="HiScoreTable">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Elapsed time, switch to High Score</comment>
+        <event-block sid="5847948074355419">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="4524285613445186" type="EventTimer">
+                    <param id="0" name="Tag">&quot;GotoHighScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1096140128254568" type="System">
+                    <param id="0" name="Layout">High Score Screen</param>
                 </action>
             </actions>
         </event-block>

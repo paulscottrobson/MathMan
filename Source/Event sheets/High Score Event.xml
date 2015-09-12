@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>High Score Event</name>
+    <events>
+        <event-block sid="6382514225740059">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4683131057451662" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Start timer" sid="7027586511590837" type="EventTimer">
+                    <param id="0" name="Duration">10</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;GotoTitleScreen&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="3157848504123714" type="HighScoreTableTextItem" />
+            </actions>
+            <sub-events>
+                <variable constant="0" name="dat" sid="2856001089158171" static="0" type="text">001000AAA</variable>
+                <event-block sid="3236509485969362">
+                    <conditions>
+                        <condition id="-10" name="For" sid="5365595825132732" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8547379320630498" type="System">
+                            <param id="0" name="Object to create">HighScoreTableTextItem</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">LayoutWidth/2</param>
+                            <param id="3" name="Y">LayoutHeight/2 + (loopIndex-3.5) * 64</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2338024089910494" type="System">
+                            <param id="0" name="Variable">dat</param>
+                            <param id="1" name="Value">HiScoreTable.At(loopindex)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5665549664541065" type="HighScoreTableTextItem">
+                            <param id="0" name="Text">(loopindex+1) &amp; &quot;. &quot; &amp; left(dat,6) &amp; &quot; .... &quot; &amp; right(dat,3)</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="5599548272263798" type="HighScoreTableTextItem">
+                            <param id="0" name="Fade-in time">loopindex/3</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="7631405716461318" type="HighScoreTableTextItem">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5735662049549071">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="4622599417393163" type="EventTimer">
+                    <param id="0" name="Tag">&quot;GotoTitleScreen&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1284093260420132" type="System">
+                    <param id="0" name="Layout">Title Screen</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Tap a button, go to that page</comment>
+        <event-block sid="8613681067603616">
+            <conditions>
+                <condition id="14" name="On tap" sid="2925457359252392" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="4579840871107402" type="System">
+                    <param id="0" name="Layout">Game Screen</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="9520954149024155" type="Controller">
+                    <param id="0" name="Instance variable">isResetRequired</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
