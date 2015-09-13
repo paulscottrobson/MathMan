@@ -10,14 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Game Screen</layout>
-        <layout order="5">High Score Screen</layout>
-        <layout active="1" order="6">Title Screen</layout>
-        <event-sheet order="1">Main Screen Events</event-sheet>
-        <event-sheet order="2">Maze Construction</event-sheet>
-        <event-sheet order="3">Title Event</event-sheet>
-        <event-sheet order="4">Configuration</event-sheet>
-        <event-sheet order="7">High Score Event</event-sheet>
+        <layout order="1">High Score Screen</layout>
+        <layout order="2">Title Screen</layout>
+        <layout order="4">Enter Initials</layout>
+        <event-sheet active="1" order="0">Title Event</event-sheet>
+        <event-sheet order="3">High Score Event</event-sheet>
+        <event-sheet order="5">Initials Entry</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -48,13 +46,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/JoypadFrame/" />
         <folder expanded="1" path="animation-folder/JoypadButton/" />
         <folder expanded="1" path="animation-folder/EventTimer/" />
+        <folder expanded="1" path="animation-folder/HighScoreLogo/" />
+        <folder expanded="1" path="animation-folder/ArrowButton/" />
+        <folder expanded="1" path="animation-folder/TitleButton/" />
         <folder expanded="1" path="animation-folder/Den/" />
         <folder expanded="1" path="animation-folder/Ghost/" />
         <folder expanded="1" path="animation-folder/Fruit/" />
         <folder expanded="1" path="animation-folder/Pacman/" />
         <folder expanded="1" path="animation-folder/Dot/" />
         <folder expanded="1" path="animation-folder/PowerPill/" />
-        <folder expanded="1" path="animation-folder/TitleButton/" />
-        <folder expanded="1" path="animation-folder/Logo/" />
     </folders-expanded>
 </c2uistate>

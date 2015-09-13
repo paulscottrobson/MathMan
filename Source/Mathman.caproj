@@ -26,6 +26,7 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -89,6 +90,28 @@
             </object-type>
             <object-type name="TitleButtonText" sid="4681371736615531">
                 <plugin id="Spritefont2" />
+                <texture original-source="C:\MathMan\Graphics\font4864.png" />
+            </object-type>
+            <object-type name="HighScoreTableTextItem" sid="3835345826088598">
+                <plugin id="Spritefont2" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="9156830595006303">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\MathMan\Graphics\font4864.png" />
+            </object-type>
+            <object-type name="NewHighScoreText" sid="8477581910987926">
+                <plugin id="Spritefont2" />
+                <texture original-source="C:\MathMan\Graphics\font4864.png" />
+            </object-type>
+            <object-type name="InitialLetterText" sid="697804318806994">
+                <plugin id="Spritefont2" />
+                <instance-variables>
+                    <instance-variable name="currentLetter" sid="8669523331256345" type="number" />
+                    <instance-variable name="letterPosition" sid="24691015209128" type="number" />
+                    <instance-variable name="displayedLetter" sid="6799859847502679" type="number" />
+                </instance-variables>
                 <texture original-source="C:\MathMan\Graphics\font4864.png" />
             </object-type>
         </object-folder>
@@ -210,6 +233,61 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5079061876076369" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HighScoreLogo" sid="9552622892967916">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="1688139898194105">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2917172343709701" speed="5">
+                        <frame duration="1" hotspotX="0.503922" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ArrowButton" sid="4818943029095582">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="ownerID" sid="8430257732443254" type="number" />
+                    <instance-variable name="direction" sid="379546181324459" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5297464054127692" speed="5">
+                        <frame duration="1" hotspotX="0.50505" hotspotY="0.50505">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TitleButton" sid="2148299918509163">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="ButtonText" sid="2993904227524699" type="string" />
+                    <instance-variable name="ButtonAction" sid="5013257920344641" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4171056306838974" speed="5">
+                        <frame duration="1" hotspotX="0.502857" hotspotY="0.5" original-source="C:\temp\button.png">
+                            <collision-poly>
+                                <point x="0.0228571" y="0.0869565" />
+                                <point x="0.497143" y="0" />
+                                <point x="0.977143" y="0.0869565" />
+                                <point x="0.988571" y="0.5" />
+                                <point x="0.977143" y="0.913043" />
+                                <point x="0.497143" y="1" />
+                                <point x="0.0228571" y="0.913043" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -692,48 +770,8 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TitleButton" sid="2148299918509163">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ButtonText" sid="2993904227524699" type="string" />
-                <instance-variable name="ButtonAction" sid="5013257920344641" type="string" />
-            </instance-variables>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4171056306838974" speed="5">
-                    <frame duration="1" hotspotX="0.502857" hotspotY="0.5" original-source="C:\temp\button.png">
-                        <collision-poly>
-                            <point x="0.0228571" y="0.0869565" />
-                            <point x="0.497143" y="0" />
-                            <point x="0.977143" y="0.0869565" />
-                            <point x="0.988571" y="0.5" />
-                            <point x="0.977143" y="0.913043" />
-                            <point x="0.497143" y="1" />
-                            <point x="0.0228571" y="0.913043" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type global="1" name="HiScoreTable" sid="1569262430101605">
             <plugin id="Arr" />
-        </object-type>
-        <object-type name="HighScoreTableTextItem" sid="3835345826088598">
-            <plugin id="Spritefont2" />
-            <behaviors>
-                <behavior-type name="Fade" sid="9156830595006303">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
-            <texture original-source="C:\MathMan\Graphics\font4864.png" />
-        </object-type>
-        <object-type name="Logo" sid="9552622892967916">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2917172343709701" speed="5">
-                    <frame duration="1" hotspotX="0.503922" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -783,6 +821,7 @@
         <layout>Game Screen.xml</layout>
         <layout>Title Screen.xml</layout>
         <layout>High Score Screen.xml</layout>
+        <layout>Enter Initials.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Main Screen Events.xml</event-sheet>
@@ -793,6 +832,7 @@
         <event-sheet>Joystick Controller.xml</event-sheet>
         <event-sheet>Configuration.xml</event-sheet>
         <event-sheet>High Score Event.xml</event-sheet>
+        <event-sheet>Initials Entry.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="66" />

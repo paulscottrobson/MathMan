@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Initials Entry</name>
+    <events>
+        <event-group description="" sid="4137116216433748" title="Entering High Score Layout" />
+        <comment>Note, a bug in Sprite Fonts (centreing a single character doesn&apos;t) means the positions of the spawned buttons are fiddled.</comment>
+        <event-block sid="2977946786042803">
+            <conditions>
+                <condition id="-18" name="On created" sid="8962803312340008" type="InitialLetterText" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1304796808373174" type="System">
+                    <param id="0" name="Object to create">ArrowButton</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">InitialLetterText.X -26</param>
+                    <param id="3" name="Y">InitialLetterText.Y-110</param>
+                </action>
+                <action id="-10" name="Set value" sid="7430719536611744" type="ArrowButton">
+                    <param id="0" name="Instance variable">ownerID</param>
+                    <param id="1" name="Value">InitialLetterText.UID</param>
+                </action>
+                <action id="-10" name="Set value" sid="1697170956746292" type="ArrowButton">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-3" name="Create object" sid="3119089975972417" type="System">
+                    <param id="0" name="Object to create">ArrowButton</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">InitialLetterText.X -26</param>
+                    <param id="3" name="Y">InitialLetterText.Y+110</param>
+                </action>
+                <action id="8" name="Set flipped" sid="2252997678911306" type="ArrowButton">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="8094148380266859" type="ArrowButton">
+                    <param id="0" name="Instance variable">ownerID</param>
+                    <param id="1" name="Value">InitialLetterText.UID</param>
+                </action>
+                <action id="-10" name="Set value" sid="7291554280889094" type="ArrowButton">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>On current letter not being displayed, update it</comment>
+        <event-block sid="7348377585833258">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5887250132885839" type="InitialLetterText">
+                    <param id="0" name="Instance variable">currentLetter</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">InitialLetterText.displayedLetter</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7220343229987334" type="InitialLetterText">
+                    <param id="0" name="Text">mid(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,InitialLetterText.currentLetter,1)</param>
+                </action>
+                <action id="-10" name="Set value" sid="98260521473261" type="InitialLetterText">
+                    <param id="0" name="Instance variable">displayedLetter</param>
+                    <param id="1" name="Value">InitialLetterText.currentLetter</param>
+                </action>
+                <action id="-10" name="Set value" sid="7566317518102225" type="InitialLetterText">
+                    <param id="0" name="Instance variable">currentLetter</param>
+                    <param id="1" name="Value">(InitialLetterText.currentLetter + 26) % 26</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>On button tap, update the owners current letter.</comment>
+        <event-block any="1" sid="4782452706531104">
+            <conditions>
+                <condition id="17" name="On tap object" sid="7821638374039864" type="Touch">
+                    <param id="0" name="Object">ArrowButton</param>
+                </condition>
+                <condition id="18" name="On double-tap object" sid="9247652956812171" type="Touch">
+                    <param id="0" name="Object">ArrowButton</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5879735440227643">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="1976459586506046" type="InitialLetterText">
+                            <param id="0" name="Unique ID">ArrowButton.ownerID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="3893048291015862" type="InitialLetterText">
+                            <param id="0" name="Instance variable">currentLetter</param>
+                            <param id="1" name="Value">ArrowButton.direction</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Button exits</comment>
+        <event-block sid="9607625165168357">
+            <conditions>
+                <condition id="17" name="On tap object" sid="785873197735504" type="Touch">
+                    <param id="0" name="Object">TitleButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9512572880938141" type="System">
+                    <param id="0" name="Layout">High Score Screen</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>On start of layout , start the high score text pulsing</comment>
+        <event-block sid="1510153723840867">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5247908889025756" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="4204421293036797" type="HighScoreLogo">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

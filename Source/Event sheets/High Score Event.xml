@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>High Score Event</name>
     <events>
+        <event-group description="" sid="2158857380972845" title="Show the high score table" />
         <event-block sid="6382514225740059">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="4683131057451662" type="System" />
