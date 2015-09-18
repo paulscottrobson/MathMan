@@ -335,16 +335,38 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>We do not have a life. Go to the start screen.</comment>
+                <comment>We do not have a life. Go to the start screen, or the enter initials screen</comment>
                 <event-block sid="9198843540448213">
                     <conditions>
                         <condition id="-22" name="Else" sid="4686980958381968" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-2" name="Go to layout" sid="6670425177252065" type="System">
-                            <param id="0" name="Layout">Title Screen</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4142116030968195">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3921693519046795" type="Controller">
+                                    <param id="0" name="Instance variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">int(left(HiScoreTable.At(7),6))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="4381764923081309" type="System">
+                                    <param id="0" name="Layout">Enter Initials</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1941257502059039">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5651631849527237" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="6670425177252065" type="System">
+                                    <param id="0" name="Layout">Title Screen</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -650,10 +672,6 @@
                         <action id="-11" name="Add to" sid="6874119435759511" type="Controller">
                             <param id="0" name="Instance variable">score</param>
                             <param id="1" name="Value">Function.Param(0)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6789131115815369" type="Controller">
-                            <param id="0" name="Instance variable">highScore</param>
-                            <param id="1" name="Value">max(Controller.score,Controller.highScore)</param>
                         </action>
                         <action id="0" name="Set text" sid="4543205914919738" type="ScoreText">
                             <param id="0" name="Text">right(&quot;000000&quot; &amp; Controller.score,6)</param>

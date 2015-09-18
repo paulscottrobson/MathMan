@@ -42,7 +42,6 @@
                         <lives>3</lives>
                         <level>2</level>
                         <speedScalar>1</speedScalar>
-                        <highScore>1000</highScore>
                         <flashCount>0</flashCount>
                         <nextGhostEatScore>0</nextGhostEatScore>
                         <isResetRequired>true</isResetRequired>

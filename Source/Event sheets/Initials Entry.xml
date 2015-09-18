@@ -41,6 +41,9 @@
                     <param id="0" name="Instance variable">direction</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="0" name="Set text" sid="3085610606004738" type="NewHighScoreText">
+                    <param id="0" name="Text">right(&quot;00000&quot; &amp; Controller.score,6)</param>
+                </action>
             </actions>
         </event-block>
         <comment>On current letter not being displayed, update it</comment>
@@ -94,17 +97,57 @@
             </sub-events>
         </event-block>
         <comment>Button exits</comment>
-        <event-block sid="9607625165168357">
+        <event-block any="1" sid="9607625165168357">
             <conditions>
                 <condition id="17" name="On tap object" sid="785873197735504" type="Touch">
                     <param id="0" name="Object">TitleButton</param>
                 </condition>
+                <condition id="1" name="On any key pressed" sid="4379606686822804" type="Keyboard" />
             </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="9512572880938141" type="System">
-                    <param id="0" name="Layout">High Score Screen</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="name" sid="2562196560236867" static="0" type="text"></variable>
+                <event-block sid="6755328565646999">
+                    <conditions>
+                        <condition id="-24" name="For Each (ordered)" sid="9158270059065841" type="System">
+                            <param id="0" name="Object">InitialLetterText</param>
+                            <param id="1" name="Expression">InitialLetterText.X</param>
+                            <param id="2" name="Order">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="21558492614774" type="System">
+                            <param id="0" name="Variable">name</param>
+                            <param id="1" name="Value">name &amp; InitialLetterText.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Put name into array, sort it and write it back.</comment>
+                <event-block sid="6745339192573151">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9758242347333478" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="302239666396809" type="HiScoreTable">
+                            <param id="0" name="X">8</param>
+                            <param id="1" name="Value">right(&quot;00000&quot; &amp; Controller.score,6) &amp; name</param>
+                        </action>
+                        <action id="8" name="Sort" sid="9318929167087057" type="HiScoreTable">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                        <action id="7" name="Reverse" sid="6681732875259234" type="HiScoreTable">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="1845955763997792" type="LocalStorage">
+                            <param id="0" name="Key">LOCALSTOREKEY</param>
+                            <param id="1" name="Value">HiScoreTable.AsJSON</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="9512572880938141" type="System">
+                            <param id="0" name="Layout">High Score Screen</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <comment>On start of layout , start the high score text pulsing</comment>
         <event-block sid="1510153723840867">

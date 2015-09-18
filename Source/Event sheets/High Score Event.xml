@@ -63,9 +63,10 @@
             </actions>
         </event-block>
         <comment>Tap a button, go to that page</comment>
-        <event-block sid="8613681067603616">
+        <event-block any="1" sid="8613681067603616">
             <conditions>
                 <condition id="14" name="On tap" sid="2925457359252392" type="Touch" />
+                <condition id="1" name="On any key pressed" sid="2735433115529381" type="Keyboard" />
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="4579840871107402" type="System">

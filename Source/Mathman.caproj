@@ -149,7 +149,6 @@
                     <instance-variable comment="Current Number of Lives" name="lives" sid="8720130912523041" type="number" />
                     <instance-variable comment="Current level" name="level" sid="8577793678232501" type="number" />
                     <instance-variable comment="Movement speed scalar" name="speedScalar" sid="9961204717816525" type="number" />
-                    <instance-variable comment="High Score so far" name="highScore" sid="7646628331735305" type="number" />
                     <instance-variable comment="No of times left to flash maze" name="flashCount" sid="7315179508249742" type="number" />
                     <instance-variable comment="Next score for eaten ghost" name="nextGhostEatScore" sid="2265949741798997" type="number" />
                     <instance-variable comment="True if reset required" name="isResetRequired" sid="185608063632421" type="boolean" />

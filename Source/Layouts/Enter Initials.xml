@@ -271,11 +271,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>320.5</x>
-                        <y>785</y>
+                        <x>320.45715332</x>
+                        <y>794</y>
                         <z>0</z>
-                        <width>175</width>
-                        <height>46</height>
+                        <width>320</width>
+                        <height>60</height>
                         <depth>0</depth>
                         <hotspotX>0.502857149</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -289,23 +289,23 @@
                         <character-height>64</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>Done</text>
-                        <scale>0.35</scale>
+                        <scale>0.75</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>-5</character-spacing>
+                        <character-spacing>-11</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>325</x>
-                        <y>783</y>
+                        <x>320.45715332</x>
+                        <y>794</y>
                         <z>0</z>
-                        <width>224</width>
-                        <height>64</height>
+                        <width>320</width>
+                        <height>60</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
