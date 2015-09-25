@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -771,6 +772,10 @@
         </object-type>
         <object-type global="1" name="HiScoreTable" sid="1569262430101605">
             <plugin id="Arr" />
+        </object-type>
+        <object-type name="9patch" sid="6425153321827679">
+            <plugin id="NinePatch" />
+            <texture />
         </object-type>
     </object-folder>
     <families>

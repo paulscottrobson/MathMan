@@ -1959,6 +1959,51 @@
             </instances>
             <effects />
         </layer>
+        <layer name="Quiz Layer" sid="2631165766431638">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="9patch" uid="126">
+                    <properties>
+                        <left-margin>120</left-margin>
+                        <right-margin>120</right-margin>
+                        <top-margin>120</top-margin>
+                        <bottom-margin>120</bottom-margin>
+                        <edges>Stretch</edges>
+                        <fill>Stretch</fill>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                        <seams>Overlap</seams>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>32</x>
+                        <y>64</y>
+                        <z>0</z>
+                        <width>576</width>
+                        <height>736</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
     </layers>
     <nonworld-instances />
     <effects />

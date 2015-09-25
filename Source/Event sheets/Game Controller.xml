@@ -120,45 +120,32 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="9804960633383812" type="PowerPill" />
-                <action id="0" name="Call function" sid="7566315156439332" type="Function">
-                    <param id="0" name="Name">&quot;addToScore&quot;</param>
-                    <param id="1" name="Parameter {n}">250</param>
-                </action>
                 <action id="6" name="Stop" sid="8641790558501354" type="Audio">
                     <param id="0" name="Tag">&quot;background&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="9507898623479816" type="Audio">
-                    <param id="0" name="Audio file">Chasing Sound</param>
-                    <param id="2" name="Loop">1</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;background&quot;</param>
+                <action id="-13" name="Set boolean" sid="1223480058520208" type="Controller">
+                    <param id="0" name="Instance variable">isGameRunning</param>
+                    <param id="1" name="Value">0</param>
                 </action>
-                <action behavior="Timer" id="0" name="Start timer" sid="7861148326731854" type="Controller">
-                    <param id="0" name="Duration">max(CHASETIMEMIN,CHASETIMEMAX+1-Controller.level)</param>
+                <action behavior="Timer" id="0" name="Start timer" sid="9373109607415" type="Controller">
+                    <param id="0" name="Duration">2</param>
                     <param id="1" name="Type">0</param>
-                    <param id="2" name="Tag">&quot;chasingEnded&quot;</param>
-                </action>
-                <action id="-10" name="Set value" sid="8313329459726434" type="Controller">
-                    <param id="0" name="Instance variable">nextGhostEatScore</param>
-                    <param id="1" name="Value">100</param>
+                    <param id="2" name="Tag">&quot;restartGameAfterStop&quot;</param>
                 </action>
             </actions>
-            <sub-events>
-                <comment>Tell all the ghosts they are being chased.</comment>
-                <event-block sid="6244362360066903">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="7426345899925564" type="System">
-                            <param id="0" name="Object">Ghost</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="2121998674197037" type="Ghost">
-                            <param id="0" name="Instance variable">attractDirection</param>
-                            <param id="1" name="Value">-1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
+        </event-block>
+        <event-block sid="4308285520937022">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="5156943910413006" type="Controller">
+                    <param id="0" name="Tag">&quot;restartGameAfterStop&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="1278241787900701" type="Function">
+                    <param id="0" name="Name">&quot;RestartGameAfterStop&quot;</param>
+                    <param id="1" name="Parameter {n}">0</param>
+                </action>
+            </actions>
         </event-block>
         <comment>Power Pill timed out / all ghosts eaten</comment>
         <event-block any="1" sid="8517059737118962">
@@ -726,6 +713,76 @@
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="X">LayoutWidth-(loopindex-1) * MAZE_BOX_SIZE-MAZE_BOX_SIZE/2</param>
                                     <param id="3" name="Y">MAZE_BOX_SIZE/2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="Parameter zero if failed, one if succeeded" sid="8721763439413563" title="Start game again after Powerpoint eaten" />
+        <event-block sid="6174714034379204">
+            <conditions>
+                <condition id="0" name="On function" sid="4688547321893045" type="Function">
+                    <param id="0" name="Name">&quot;RestartGameAfterStop&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="2768466640691104" type="Controller">
+                    <param id="0" name="Instance variable">isGameRunning</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Failed</comment>
+                <event-block sid="2916875414160492">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="9259118606527838" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <comment>Suceeded</comment>
+                <event-block sid="85826932508015">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="208591312774458" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="4487482589872782" type="Function">
+                            <param id="0" name="Name">&quot;addToScore&quot;</param>
+                            <param id="1" name="Parameter {n}">250</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4419452300540834" type="Controller">
+                            <param id="0" name="Instance variable">nextGhostEatScore</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="2859878333643466" type="Controller">
+                            <param id="0" name="Duration">max(CHASETIMEMIN,CHASETIMEMAX+1-Controller.level)</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;chasingEnded&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="7082195748757082" type="Audio">
+                            <param id="0" name="Audio file">Chasing Sound</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;background&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Tell all the ghosts they are being chased.</comment>
+                        <event-block sid="9961288274030652">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="4476455640837855" type="System">
+                                    <param id="0" name="Object">Ghost</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1963890943891269" type="Ghost">
+                                    <param id="0" name="Instance variable">attractDirection</param>
+                                    <param id="1" name="Value">-1</param>
                                 </action>
                             </actions>
                         </event-block>
