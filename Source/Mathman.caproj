@@ -773,9 +773,34 @@
         <object-type global="1" name="HiScoreTable" sid="1569262430101605">
             <plugin id="Arr" />
         </object-type>
-        <object-type name="9patch" sid="6425153321827679">
+        <object-type name="QuizBoard" sid="6425153321827679">
             <plugin id="NinePatch" />
+            <instance-variables>
+                <instance-variable name="finalWidth" sid="532590977011904" type="number" />
+                <instance-variable name="finalHeight" sid="8960490305723076" type="number" />
+            </instance-variables>
             <texture />
+        </object-type>
+        <object-type name="PopupController" sid="7610562383212287">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="908425810035234">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6494195267281973" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="QuizLayer" sid="902009926898516">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7615603928913722" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>

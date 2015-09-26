@@ -52,7 +52,7 @@
                     <param id="0" name="Instance variable">level</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action disabled="1" id="-10" name="Set value" sid="7059422223656308" type="Controller">
+                <action id="-10" name="Set value" sid="7059422223656308" type="Controller">
                     <param id="0" name="Instance variable">level</param>
                     <param id="1" name="Value">12</param>
                 </action>
@@ -132,9 +132,70 @@
                     <param id="1" name="Type">0</param>
                     <param id="2" name="Tag">&quot;restartGameAfterStop&quot;</param>
                 </action>
+                <action id="-15" name="Set visible" sid="2941924306566201" type="QuizBoard">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="9366330000580954" type="QuizBoard">
+                    <param id="0" name="Instance variable">finalWidth</param>
+                    <param id="1" name="Value">QuizBoard.Width</param>
+                </action>
+                <action id="-10" name="Set value" sid="8111617129822708" type="QuizBoard">
+                    <param id="0" name="Instance variable">finalHeight</param>
+                    <param id="1" name="Value">QuizBoard.Height</param>
+                </action>
+                <action behavior="Fade" id="2" name="Set fade-in time" sid="512552754150524" type="PopupController">
+                    <param id="0" name="Fade-in time">0.6</param>
+                </action>
+                <action behavior="Fade" id="4" name="Set fade-out time" sid="8741533226671589" type="PopupController">
+                    <param id="0" name="Fade-out time">0</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" sid="2274051697837483" type="PopupController" />
             </actions>
         </event-block>
-        <event-block sid="4308285520937022">
+        <comment>Quiz Board going in/out</comment>
+        <event-block sid="81234688451929">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="3295344651972915" type="QuizBoard" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="9019090801481806" type="QuizBoard">
+                    <param id="0" name="Opacity">PopupController.Opacity</param>
+                </action>
+                <action id="-6" name="Set height" sid="1242722777763549" type="QuizBoard">
+                    <param id="0" name="Height">QuizBoard.finalHeight*PopupController.Opacity/100</param>
+                </action>
+                <action id="-5" name="Set width" sid="1100059439359666" type="QuizBoard">
+                    <param id="0" name="Width">QuizBoard.finalWidth*PopupController.opacity/100</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Make things visible or invisible. The &quot;QuizLayer&quot; is because of artefact lines caused by the stretching of the quizboard 9panel.</comment>
+                <event-block sid="2586921940660354">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="2267012411309682" type="PopupController">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="3649251392405904" type="QuizLayer">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8058340641582103">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7593543177264303" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7750426143676254" type="QuizLayer">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="4308285520937022">
             <conditions>
                 <condition behavior="Timer" id="0" name="On timer" sid="5156943910413006" type="Controller">
                     <param id="0" name="Tag">&quot;restartGameAfterStop&quot;</param>

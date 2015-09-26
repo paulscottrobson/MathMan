@@ -59,5 +59,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Pacman/" />
         <folder expanded="1" path="animation-folder/Dot/" />
         <folder expanded="1" path="animation-folder/PowerPill/" />
+        <folder expanded="1" path="animation-folder/PopupController/" />
+        <folder expanded="1" path="animation-folder/QuizLayer/" />
     </folders-expanded>
 </c2uistate>
