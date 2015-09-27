@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>QuizSection</name>
+    <events>
+        <event-group description="" sid="8729954937721407" title="Quiz Section Events" />
+        <event-block sid="4026110323604459">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="9280683885473164" type="QuizBoard">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Opacity">100</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7720599244851473">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="3319063111153239" type="Touch">
+                            <param id="0" name="Object">QuizBoard</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="3581246610940602" type="PopupController">
+                            <param id="0" name="Fade-in time">0</param>
+                        </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="4143876193133551" type="PopupController">
+                            <param id="0" name="Fade-out time">0.6</param>
+                        </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="9947219772727909" type="PopupController" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -3,19 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Title Event</name>
     <events>
+        <event-group description="" sid="7800074182458808" title="Title Screen Events" />
         <comment>On start, update high score and score and stop ghost animation</comment>
         <event-block sid="3978707527815892">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="3563553877359106" type="System" />
             </conditions>
             <actions>
-                <action id="2" name="Stop" sid="4390381550479241" type="Ghost" />
-                <action id="0" name="Set text" sid="8310686191752418" type="SubTitleText">
-                    <param id="0" name="Text">GAMESUBTITLE</param>
-                </action>
-                <action id="0" name="Set text" sid="6747080594647435" type="TitleText">
-                    <param id="0" name="Text">GAMETITLE</param>
-                </action>
+                <action disabled="1" id="2" name="Stop" sid="4390381550479241" type="Ghost" />
                 <action behavior="Timer" id="0" name="Start timer" sid="8122456345335903" type="EventTimer">
                     <param id="0" name="Duration">8</param>
                     <param id="1" name="Type">0</param>
@@ -27,6 +22,12 @@
                 </action>
                 <action disabled="1" id="-2" name="Go to layout" sid="4774907014091652" type="System">
                     <param id="0" name="Layout">Enter Initials</param>
+                </action>
+                <action id="0" name="Set text" sid="1759977822113332" type="TitleText">
+                    <param id="0" name="Text">Function.Call(INFOFUNCTION,CFG_TITLE)</param>
+                </action>
+                <action id="0" name="Set text" sid="2856709048093072" type="SubTitleText">
+                    <param id="0" name="Text">Function.Call(INFOFUNCTION,CFG_SUBTITLE)</param>
                 </action>
             </actions>
         </event-block>
@@ -217,5 +218,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Need to have this so we can interrogate the configuration function</comment>
+        <include>All_Configurations</include>
     </events>
 </c2eventsheet>

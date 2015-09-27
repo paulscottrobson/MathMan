@@ -5,7 +5,7 @@
     <events>
         <event-group description="" sid="7837759549000638" title="Main Events for Game" />
         <comment>Configuration </comment>
-        <include>Configuration</include>
+        <include>Game Configuration</include>
         <comment>Code to tidy up and reset frame</comment>
         <include>Maze Construction</include>
         <comment>General code for moving objects</comment>
@@ -14,5 +14,9 @@
         <include>Game Controller</include>
         <comment>Joypad events</comment>
         <include>Joystick Controller</include>
+        <comment>Quiz is displayed</comment>
+        <include>QuizSection</include>
+        <comment>Versions of game - configuration functions</comment>
+        <include>All_Configurations</include>
     </events>
 </c2eventsheet>

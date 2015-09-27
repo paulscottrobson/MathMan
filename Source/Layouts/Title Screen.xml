@@ -45,6 +45,7 @@
                         <flashCount>0</flashCount>
                         <nextGhostEatScore>0</nextGhostEatScore>
                         <isResetRequired>true</isResetRequired>
+                        <answeredCorrectly>false</answeredCorrectly>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />

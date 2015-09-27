@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>All_Configurations</name>
+    <events>
+        <event-group description="Needs to be in both title *and* game" sid="8588067667225567" title="All possible configurations">
+            <sub-events>
+                <include>Demo Version</include>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Demo Version</name>
+    <events>
+        <event-group description="The name of this function is set in the Configuration Event Sheet" sid="8496032926391572" title="A demo of the configuration function" />
+        <event-block sid="6177791433611365">
+            <conditions>
+                <condition id="0" name="On function" sid="4677725303529597" type="Function">
+                    <param id="0" name="Name">&quot;DemoVersion&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="6922279205361449" type="Function">
+                    <param id="0" name="Value">&quot;???&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9480497474857736">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="732670384284426" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_TITLE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="4692197495702723" type="Function">
+                            <param id="0" name="Value">&quot;Mathman/Demo&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3595229642009298">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="6653130188536273" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_SUBTITLE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="942973751125972" type="Function">
+                            <param id="0" name="Value">&quot;Play the Demo version ....&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

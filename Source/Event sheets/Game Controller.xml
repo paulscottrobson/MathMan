@@ -135,14 +135,6 @@
                 <action id="-15" name="Set visible" sid="2941924306566201" type="QuizBoard">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="-10" name="Set value" sid="9366330000580954" type="QuizBoard">
-                    <param id="0" name="Instance variable">finalWidth</param>
-                    <param id="1" name="Value">QuizBoard.Width</param>
-                </action>
-                <action id="-10" name="Set value" sid="8111617129822708" type="QuizBoard">
-                    <param id="0" name="Instance variable">finalHeight</param>
-                    <param id="1" name="Value">QuizBoard.Height</param>
-                </action>
                 <action behavior="Fade" id="2" name="Set fade-in time" sid="512552754150524" type="PopupController">
                     <param id="0" name="Fade-in time">0.6</param>
                 </action>
@@ -150,6 +142,10 @@
                     <param id="0" name="Fade-out time">0</param>
                 </action>
                 <action behavior="Fade" id="0" name="Restart fade" sid="2274051697837483" type="PopupController" />
+                <action id="-13" name="Set boolean" sid="2104913456492152" type="Controller">
+                    <param id="0" name="Instance variable">answeredCorrectly</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
         </event-block>
         <comment>Quiz Board going in/out</comment>
@@ -195,16 +191,34 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block disabled="1" sid="4308285520937022">
+        <comment>Remember quizboard size on creation as we zoom it in and out</comment>
+        <event-block sid="8314330021882713">
             <conditions>
-                <condition behavior="Timer" id="0" name="On timer" sid="5156943910413006" type="Controller">
-                    <param id="0" name="Tag">&quot;restartGameAfterStop&quot;</param>
-                </condition>
+                <condition id="-18" name="On created" sid="9532084232249578" type="QuizBoard" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="8779840078531296" type="QuizBoard">
+                    <param id="0" name="Instance variable">finalWidth</param>
+                    <param id="1" name="Value">QuizBoard.Width</param>
+                </action>
+                <action id="-10" name="Set value" sid="8024398842489093" type="QuizBoard">
+                    <param id="0" name="Instance variable">finalHeight</param>
+                    <param id="1" name="Value">QuizBoard.Height</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>End of popup</comment>
+        <event-block sid="2636502209135019">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="2649453102315106" type="PopupController" />
             </conditions>
             <actions>
                 <action id="0" name="Call function" sid="1278241787900701" type="Function">
                     <param id="0" name="Name">&quot;RestartGameAfterStop&quot;</param>
-                    <param id="1" name="Parameter {n}">0</param>
+                    <param id="1" name="Parameter {n}">Controller.answeredCorrectly ? 1 : 0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5528882144241154" type="QuizBoard">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>

@@ -153,6 +153,7 @@
                     <instance-variable comment="No of times left to flash maze" name="flashCount" sid="7315179508249742" type="number" />
                     <instance-variable comment="Next score for eaten ghost" name="nextGhostEatScore" sid="2265949741798997" type="number" />
                     <instance-variable comment="True if reset required" name="isResetRequired" sid="185608063632421" type="boolean" />
+                    <instance-variable comment="true if quiz answered correctly" name="answeredCorrectly" sid="5375892095292354" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Timer" sid="5863022658326676">
@@ -853,15 +854,22 @@
         <layout>Enter Initials.xml</layout>
     </layout-folder>
     <event-folder>
+        <event-folder name="Configurations">
+            <event-sheet>Demo Version.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Miscellany">
+            <event-sheet>Joystick Controller.xml</event-sheet>
+            <event-sheet>High Score Event.xml</event-sheet>
+            <event-sheet>Initials Entry.xml</event-sheet>
+            <event-sheet>Title Event.xml</event-sheet>
+        </event-folder>
         <event-sheet>Main Screen Events.xml</event-sheet>
         <event-sheet>Maze Construction.xml</event-sheet>
         <event-sheet>MovingObjects.xml</event-sheet>
         <event-sheet>Game Controller.xml</event-sheet>
-        <event-sheet>Title Event.xml</event-sheet>
-        <event-sheet>Joystick Controller.xml</event-sheet>
-        <event-sheet>Configuration.xml</event-sheet>
-        <event-sheet>High Score Event.xml</event-sheet>
-        <event-sheet>Initials Entry.xml</event-sheet>
+        <event-sheet>Game Configuration.xml</event-sheet>
+        <event-sheet>QuizSection.xml</event-sheet>
+        <event-sheet>All_Configurations.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="66" />

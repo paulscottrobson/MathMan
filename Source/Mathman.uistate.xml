@@ -12,14 +12,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="1">High Score Screen</layout>
         <layout order="2">Title Screen</layout>
-        <layout order="4">Enter Initials</layout>
-        <layout active="1" order="9">Game Screen</layout>
+        <layout order="7">Game Screen</layout>
         <event-sheet order="0">Title Event</event-sheet>
         <event-sheet order="3">High Score Event</event-sheet>
-        <event-sheet order="5">Initials Entry</event-sheet>
-        <event-sheet order="6">Configuration</event-sheet>
-        <event-sheet order="7">Game Controller</event-sheet>
-        <event-sheet order="8">MovingObjects</event-sheet>
+        <event-sheet order="4">Game Configuration</event-sheet>
+        <event-sheet active="1" order="5">Game Controller</event-sheet>
+        <event-sheet order="6">MovingObjects</event-sheet>
+        <event-sheet order="8">QuizSection</event-sheet>
+        <event-sheet order="9">Main Screen Events</event-sheet>
+        <event-sheet order="10">Demo Version</event-sheet>
+        <event-sheet order="11">All_Configurations</event-sheet>
+        <event-sheet order="12">Joystick Controller</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -39,6 +42,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/Maze/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/Configurations/" />
+        <folder expanded="1" path="event-folder/Miscellany/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
