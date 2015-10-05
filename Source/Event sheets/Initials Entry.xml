@@ -125,7 +125,11 @@
                 <comment>Put name into array, sort it and write it back.</comment>
                 <event-block sid="6745339192573151">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="9758242347333478" type="System" />
+                        <condition id="-14" name="Compare variable" sid="4124816708707489" type="System">
+                            <param id="0" name="Variable">LocalStorageKey</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="2" name="Set at X" sid="302239666396809" type="HiScoreTable">
@@ -139,7 +143,7 @@
                             <param id="0" name="Axis">0</param>
                         </action>
                         <action id="0" name="Set item" sid="1845955763997792" type="LocalStorage">
-                            <param id="0" name="Key">LOCALSTOREKEY</param>
+                            <param id="0" name="Key">LocalStorageKey</param>
                             <param id="1" name="Value">HiScoreTable.AsJSON</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="9512572880938141" type="System">

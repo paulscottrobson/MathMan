@@ -10,13 +10,201 @@
                     <param id="0" name="Comparison">0</param>
                     <param id="1" name="Opacity">100</param>
                 </condition>
+                <condition id="-9" name="Is visible" sid="353948418378536" type="QuizBoard" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="-16" name="Set opacity" sid="6340923439070077" type="AnswerText">
+                    <param id="0" name="Opacity">QuizQuestion.Opacity</param>
+                </action>
+            </actions>
             <sub-events>
+                <comment>First time only, set the question text</comment>
+                <event-block sid="3052798830140105">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="1957085111240578" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7229102735107088" type="QuizQuestion">
+                            <param id="0" name="Text">Function.Call(INFOFUNCTION,CFG_NEWQUESTION)</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="7626709632964888" type="QuizQuestion">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="9042876434994189" type="QuizQuestion" />
+                        <action id="-9" name="Destroy" sid="9261933751205973" type="AnswerButton" />
+                    </actions>
+                    <sub-events>
+                        <comment>Create the answers</comment>
+                        <variable comment="Answers seperated by colons" constant="0" name="answers" sid="5424115950016742" static="0" type="text">:</variable>
+                        <variable comment="Current working answer" constant="0" name="newAnswer" sid="3145790870379742" static="0" type="number">0</variable>
+                        <variable comment="Slots used on the screen for placement" constant="0" name="slotUsed" sid="9323153492677905" static="0" type="text">X................</variable>
+                        <variable comment="Current slot being tried" constant="0" name="slot" sid="3340163357843744" static="0" type="number">0</variable>
+                        <variable comment="Number of answers displayed" constant="0" name="answerCount" sid="1090013977367201" static="0" type="number">0</variable>
+                        <comment>Get the correct answers</comment>
+                        <event-block sid="7727431735997973">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="7235997463909281" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9762719279168914" type="System">
+                                    <param id="0" name="Variable">newAnswer</param>
+                                    <param id="1" name="Value">Function.Call(INFOFUNCTION,CFG_CORRECT)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7657378964639825" type="System">
+                                    <param id="0" name="Variable">answers</param>
+                                    <param id="1" name="Value">&quot;:&quot; &amp; newAnswer &amp; &quot;:&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1842003246441548" type="System">
+                                    <param id="0" name="Variable">answerCount</param>
+                                    <param id="1" name="Value">Function.Call(INFOFUNCTION,CFG_ANSWERCOUNT)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Get all the other answers</comment>
+                        <event-block sid="7354140265352431">
+                            <conditions>
+                                <condition id="-10" name="For" sid="863681934359334" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">2</param>
+                                    <param id="2" name="End index">answerCount</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8753952126464777">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="5407108847250243" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="4993139258214138" type="System">
+                                            <param id="0" name="First value">find(answers,&quot;:&quot; &amp; newAnswer &amp; &quot;:&quot;) </param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9949307001000333" type="System">
+                                            <param id="0" name="Variable">newAnswer</param>
+                                            <param id="1" name="Value">Function.Call(INFOFUNCTION,CFG_PLAUSIBLE)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6058153399430365">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="1978614032086363" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2841691431496769" type="System">
+                                            <param id="0" name="Variable">answers</param>
+                                            <param id="1" name="Value">answers &amp; newAnswer &amp; &quot;:&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Create the actual buttons</comment>
+                        <event-block sid="9665260561601356">
+                            <conditions>
+                                <condition id="-10" name="For" sid="9644492401082674" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">answerCount</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="993108164289045" type="System">
+                                    <param id="0" name="Variable">slot</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>Look for an empty slot for this button</comment>
+                                <event-block sid="1199961228543833">
+                                    <conditions>
+                                        <condition id="-23" name="While" sid="4465388866560896" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="91997291515299" type="System">
+                                            <param id="0" name="First value">mid(slotUsed,slot,1)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">&quot;.&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="6237984410562642" type="System">
+                                            <param id="0" name="Variable">slot</param>
+                                            <param id="1" name="Value">floor(random(1,answerCount+1))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Create the button in the slot</comment>
+                                <event-block sid="7184233723071048">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="2777463457773442" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7528002767519081" type="System">
+                                            <param id="0" name="Variable">slotUsed</param>
+                                            <param id="1" name="Value">left(slotUsed,slot)&amp;&quot;X&quot;&amp;mid(slotUsed,slot+1,99)</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="9255103300158387" type="System">
+                                            <param id="0" name="Object to create">AnswerButton</param>
+                                            <param id="1" name="Layer">3</param>
+                                            <param id="2" name="X">slot / (answerCount + 1) * QuizBoard.Width-QuizBoard.Width/2+QuizBoard.X</param>
+                                            <param id="3" name="Y">QuizBoard.Height*2/3+QuizBoard.BBoxTop</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="5371632556523021" type="AnswerButton">
+                                            <param id="0" name="Width">QuizBoard.Width / (answerCount+2)</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="4770751269336132" type="AnswerButton">
+                                            <param id="0" name="Height">AnswerButton.Width</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="241135863450425" type="System">
+                                            <param id="0" name="Object to create">AnswerText</param>
+                                            <param id="1" name="Layer">3</param>
+                                            <param id="2" name="X">AnswerButton.X</param>
+                                            <param id="3" name="Y">AnswerButton.Y</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="7219795123348252" type="AnswerText">
+                                            <param id="0" name="Text">tokenat(answers,loopindex,&quot;:&quot;)</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="6097404319873083" type="AnswerButton">
+                                            <param id="0" name="Instance variable">isCorrectAnswer</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="2" name="Set scale" sid="3242642835137387" type="AnswerText">
+                                            <param id="0" name="Scale">AnswerButton.Width / 110</param>
+                                        </action>
+                                        <action id="3" name="Set character spacing" sid="2270041460997096" type="AnswerText">
+                                            <param id="0" name="Character spacing">-16*AnswerText.CharacterScale</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="284299375323466" type="AnswerText">
+                                            <param id="0" name="Opacity">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1754025773723931">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8889215309311044" type="System">
+                                                    <param id="0" name="First value">loopindex</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="3897940627908861" type="AnswerButton">
+                                                    <param id="0" name="Instance variable">isCorrectAnswer</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Tapped transparent answer button, go back</comment>
                 <event-block sid="7720599244851473">
                     <conditions>
                         <condition id="17" name="On tap object" sid="3319063111153239" type="Touch">
-                            <param id="0" name="Object">QuizBoard</param>
+                            <param id="0" name="Object">AnswerButton</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -27,7 +215,41 @@
                             <param id="0" name="Fade-out time">0.6</param>
                         </action>
                         <action behavior="Fade" id="0" name="Restart fade" sid="9947219772727909" type="PopupController" />
+                        <action id="-16" name="Set opacity" sid="1759539404081061" type="QuizQuestion">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4299459781883344" type="Controller">
+                            <param id="0" name="Instance variable">answeredCorrectly</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4323839446475923" type="AnswerText" />
                     </actions>
+                    <sub-events>
+                        <comment>With the correct answer, if it is ....</comment>
+                        <event-block sid="3777613386296417">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="523356120415401" type="AnswerButton">
+                                    <param id="0" name="Instance variable">isCorrectAnswer</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="1137689599163323" type="Controller">
+                                    <param id="0" name="Instance variable">answeredCorrectly</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6125025683319253">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="8171641080585117" type="System">
+                                    <param id="0" name="Object">AnswerButton</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4416497325816248" type="AnswerButton" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>

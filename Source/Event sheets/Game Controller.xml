@@ -52,7 +52,7 @@
                     <param id="0" name="Instance variable">level</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-10" name="Set value" sid="7059422223656308" type="Controller">
+                <action disabled="1" id="-10" name="Set value" sid="7059422223656308" type="Controller">
                     <param id="0" name="Instance variable">level</param>
                     <param id="1" name="Value">12</param>
                 </action>
@@ -111,11 +111,14 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Hit Power pill, so start chasing.</comment>
+        <comment>Hit Power pill, so start chasing (iscontrolled checks for still alive)</comment>
         <event-block sid="824778676239735">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="1598119371772273" type="Pacman">
                     <param id="0" name="Object">PowerPill</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9857466271022035" type="Pacman">
+                    <param id="0" name="Instance variable">isControlled</param>
                 </condition>
             </conditions>
             <actions>
@@ -363,6 +366,7 @@
                     <param id="0" name="Instance variable">lives</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="33" name="Stop all" sid="9010061631588355" type="Audio" />
             </actions>
             <sub-events>
                 <comment>We have a life left, reset the ghosts and Pacman and play on.</comment>
@@ -809,7 +813,7 @@
                 </action>
             </actions>
             <sub-events>
-                <comment>Failed</comment>
+                <comment>Failed - if was eating previously though restart SFX as if you get a question wrong when chasing you can continue that chase, just no new one.</comment>
                 <event-block sid="2916875414160492">
                     <conditions>
                         <condition id="1" name="Compare parameter" sid="9259118606527838" type="Function">
@@ -819,6 +823,25 @@
                         </condition>
                     </conditions>
                     <actions />
+                    <sub-events>
+                        <event-block sid="3513169487957736">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1684260338268168" type="Ghost">
+                                    <param id="0" name="Instance variable">attractDirection</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="1676054673055682" type="Audio">
+                                    <param id="0" name="Audio file">Chasing Sound</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;background&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Suceeded</comment>
                 <event-block sid="85826932508015">

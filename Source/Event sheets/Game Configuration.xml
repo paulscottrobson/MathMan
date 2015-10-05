@@ -7,7 +7,7 @@
         <comment>Function to call to configure</comment>
         <variable comment="Function to call for information" constant="1" name="INFOFUNCTION" sid="8280780186650744" static="0" type="text">DemoVersion</variable>
         <comment>Key used for storage of high score tables.</comment>
-        <variable comment="key for localstorage" constant="1" name="LOCALSTOREKEY" sid="8672086282322975" static="0" type="text">Mathman.Storage</variable>
+        <variable comment="key for localstorage" constant="0" name="LocalStorageKey" sid="8672086282322975" static="0" type="text"></variable>
         <comment>How fast the levels accelerate.</comment>
         <variable comment="Speed multiplier per level" constant="1" name="SPEEDMULTIPLIER" sid="4111865471935541" static="0" type="number">0.08</variable>
         <comment>Where the power pills are, coordinate pairs, LEFT SIDE only. Note format x,y:x,y:x,y etc.</comment>
@@ -17,6 +17,11 @@
         <variable comment="Chase time is at most this" constant="1" name="CHASETIMEMAX" sid="9878282190978904" static="0" type="number">11</variable>
         <comment>Things to ask for</comment>
         <variable constant="1" name="CFG_TITLE" sid="2817435002632868" static="0" type="number">1</variable>
-        <variable constant="1" name="CFG_SUBTITLE" sid="5146330550537922" static="0" type="number">1</variable>
+        <variable constant="1" name="CFG_SUBTITLE" sid="5146330550537922" static="0" type="number">2</variable>
+        <variable constant="1" name="CFG_NEWQUESTION" sid="426175336985448" static="0" type="number">3</variable>
+        <variable constant="1" name="CFG_CORRECT" sid="374281507458658" static="0" type="number">4</variable>
+        <variable constant="1" name="CFG_PLAUSIBLE" sid="375702987543074" static="0" type="number">5</variable>
+        <variable constant="1" name="CFG_ANSWERCOUNT" sid="912807612521046" static="0" type="number">6</variable>
+        <variable constant="1" name="CFG_STORAGEKEY" sid="6269969042779651" static="0" type="number">7</variable>
     </events>
 </c2eventsheet>

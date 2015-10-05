@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
@@ -26,6 +27,7 @@
         <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
@@ -54,7 +56,7 @@
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
-        <prop name="Preview browser">Firefox</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Point</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -113,6 +115,24 @@
                     <instance-variable name="letterPosition" sid="24691015209128" type="number" />
                     <instance-variable name="displayedLetter" sid="6799859847502679" type="number" />
                 </instance-variables>
+                <texture original-source="C:\MathMan\Graphics\font4864.png" />
+            </object-type>
+            <object-type name="QuizQuestion" sid="54323888269951">
+                <plugin id="Spritefont2" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="5440195856781773">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\MathMan\Graphics\font4864.png" />
+            </object-type>
+            <object-type name="AnswerText" sid="6542412132176394">
+                <plugin id="Spritefont2" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="2466986156201931">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
                 <texture original-source="C:\MathMan\Graphics\font4864.png" />
             </object-type>
         </object-folder>
@@ -291,6 +311,35 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="QuizLayer" sid="902009926898516">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7615603928913722" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PopupController" sid="7610562383212287">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="908425810035234">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6494195267281973" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="QuizBoard" sid="6425153321827679">
+                <plugin id="NinePatch" />
+                <instance-variables>
+                    <instance-variable name="finalWidth" sid="532590977011904" type="number" />
+                    <instance-variable name="finalHeight" sid="8960490305723076" type="number" />
+                </instance-variables>
+                <texture />
             </object-type>
         </object-folder>
         <object-folder name="Maze">
@@ -774,31 +823,16 @@
         <object-type global="1" name="HiScoreTable" sid="1569262430101605">
             <plugin id="Arr" />
         </object-type>
-        <object-type name="QuizBoard" sid="6425153321827679">
-            <plugin id="NinePatch" />
+        <object-type name="Text" sid="7266575493418871">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="AnswerButton" sid="7149248539484005">
+            <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="finalWidth" sid="532590977011904" type="number" />
-                <instance-variable name="finalHeight" sid="8960490305723076" type="number" />
+                <instance-variable name="isCorrectAnswer" sid="5136858422401271" type="boolean" />
             </instance-variables>
-            <texture />
-        </object-type>
-        <object-type name="PopupController" sid="7610562383212287">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Fade" sid="908425810035234">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6494195267281973" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="QuizLayer" sid="902009926898516">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7615603928913722" speed="5">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5876239054829234" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>

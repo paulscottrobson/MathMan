@@ -16,6 +16,7 @@
                 </action>
             </actions>
             <sub-events>
+                <comment>Get the title at the top of the title screen</comment>
                 <event-block sid="9480497474857736">
                     <conditions>
                         <condition id="1" name="Compare parameter" sid="732670384284426" type="Function">
@@ -30,6 +31,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Get the sub title</comment>
                 <event-block sid="3595229642009298">
                     <conditions>
                         <condition id="1" name="Compare parameter" sid="6653130188536273" type="Function">
@@ -41,6 +43,103 @@
                     <actions>
                         <action id="1" name="Set return value" sid="942973751125972" type="Function">
                             <param id="0" name="Value">&quot;Play the Demo version ....&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get the LocalStorageKey Name</comment>
+                <event-block sid="1434214867613849">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="7826483804367974" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_STORAGEKEY</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="6357828767865333" type="Function">
+                            <param id="0" name="Value">&quot;Mathman.DemoGame.LocalStorage&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get a new question. This tests up to 12 times tables and returns the question text.</comment>
+                <event-block sid="4439606547825318">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="84242965933661" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_NEWQUESTION</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1928402612283209" type="System">
+                            <param id="0" name="Variable">CVn1</param>
+                            <param id="1" name="Value">floor(random(1,13))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8289772588387082" type="System">
+                            <param id="0" name="Variable">CVn2</param>
+                            <param id="1" name="Value">floor(random(1,13))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7922209952721477" type="System">
+                            <param id="0" name="Variable">CVn3</param>
+                            <param id="1" name="Value">CVn1 * CVn2</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="8340583106557227" type="Function">
+                            <param id="0" name="Value">&quot;What do you get if you multiply &quot; &amp; CVn1 &amp; &quot; by &quot; &amp; CVn2 &amp; &quot; ?&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>How many answers are given to choose from (must be at least two, obviously).</comment>
+                <event-block sid="8953842629337343">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="3829205840962501" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_ANSWERCOUNT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="9689444220396686" type="Function">
+                            <param id="0" name="Value">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Return the correct answer</comment>
+                <event-block sid="5602100319782374">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="6014114179374256" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_CORRECT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="2302318827675033" type="Function">
+                            <param id="0" name="Value">CVn3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="n1" sid="4232727138992742" static="0" type="number">0</variable>
+                <variable constant="0" name="n2" sid="1474511285986307" static="0" type="number">0</variable>
+                <comment>Return a plausible answer - the program removes duplicates and correct answers. This must be able to generate enough wrong answers to satisfy CFG_ANSWERCOUNT otherwise it will crash.</comment>
+                <event-block sid="8695552158604864">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="3438175426351639" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">CFG_PLAUSIBLE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7560369577820362" type="System">
+                            <param id="0" name="Variable">n1</param>
+                            <param id="1" name="Value">max(1,CVn1 + floor(random(0,3))-1)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2097098000622934" type="System">
+                            <param id="0" name="Variable">n2</param>
+                            <param id="1" name="Value">max(1,CVn2 + floor(random(0,3))-1)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="5339971215376512" type="Function">
+                            <param id="0" name="Value">n1 * n2</param>
                         </action>
                     </actions>
                 </event-block>

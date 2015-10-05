@@ -23,6 +23,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="10">Demo Version</event-sheet>
         <event-sheet order="11">All_Configurations</event-sheet>
         <event-sheet order="12">Joystick Controller</event-sheet>
+        <event-sheet order="13">Initials Entry</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -58,13 +59,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/HighScoreLogo/" />
         <folder expanded="1" path="animation-folder/ArrowButton/" />
         <folder expanded="1" path="animation-folder/TitleButton/" />
+        <folder expanded="1" path="animation-folder/QuizLayer/" />
+        <folder expanded="1" path="animation-folder/PopupController/" />
         <folder expanded="1" path="animation-folder/Den/" />
         <folder expanded="1" path="animation-folder/Ghost/" />
         <folder expanded="1" path="animation-folder/Fruit/" />
         <folder expanded="1" path="animation-folder/Pacman/" />
         <folder expanded="1" path="animation-folder/Dot/" />
         <folder expanded="1" path="animation-folder/PowerPill/" />
-        <folder expanded="1" path="animation-folder/PopupController/" />
-        <folder expanded="1" path="animation-folder/QuizLayer/" />
+        <folder expanded="1" path="animation-folder/AnswerButton/" />
     </folders-expanded>
 </c2uistate>
